@@ -412,6 +412,27 @@ h1, h2, h3, h4 {
 .services__card-img {
     max-width: 280px;
     margin: 0 auto 1.5rem;
+    position: relative;
+}
+
+.services__card-img::after {
+    content: 'Illustrationen von Storyset';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.65rem;
+    color: var(--text-light);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.3rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.services__card-img:hover::after {
+    opacity: 1;
 }
 
 .services__card h3 {
@@ -423,6 +444,7 @@ h1, h2, h3, h4 {
     color: var(--text-muted);
     font-size: 0.95rem;
 }
+
 
 /* --- Use Cases --- */
 .usecases {
@@ -494,6 +516,16 @@ h1, h2, h3, h4 {
     border-radius: var(--radius);
     padding: 2rem;
     position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+}
+
+.steps__card:hover {
+    transform: scale(1.15);
+    box-shadow: var(--shadow-lg);
+    z-index: 10;
 }
 
 .steps__number {
@@ -532,6 +564,7 @@ h1, h2, h3, h4 {
     font-weight: 600;
     font-size: 0.875rem;
     font-style: italic;
+    margin-top: auto;
 }
 
 .steps__cta-wrap {
@@ -1080,6 +1113,55 @@ h1, h2, h3, h4 {
     .wip__title {
         font-size: 2.5rem;
     }
+}
+
+/* ==========================================================================
+   Legal Pages (Impressum, Datenschutz)
+   ========================================================================== */
+.legal-page {
+    padding: calc(var(--header-height) + 4rem) 0 5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.legal-page h1 {
+    margin-bottom: 2.5rem;
+    text-align: left;
+}
+
+.legal-page h2 {
+    font-size: 1.5rem;
+    margin: 2.5rem 0 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+}
+
+.legal-page h3 {
+    font-size: 1.15rem;
+    margin: 1.5rem 0 0.75rem;
+    text-align: left;
+}
+
+.legal-page p {
+    margin-bottom: 1rem;
+}
+
+.legal-page ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+.legal-page li {
+    margin-bottom: 0.5rem;
+}
+
+.highlight-field {
+    background: #fff3e0;
+    padding: 0.15em 0.5em;
+    border-radius: 4px;
+    color: var(--orange);
+    font-weight: 600;
 }
 
 /* ==========================================================================

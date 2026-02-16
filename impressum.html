@@ -10,43 +10,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .legal-page {
-            padding: calc(var(--header-height) + 4rem) 0 5rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .legal-page h1 {
-            margin-bottom: 2.5rem;
-            text-align: left;
-        }
-        .legal-page h2 {
-            font-size: 1.5rem;
-            margin: 2rem 0 1rem;
-            text-align: left;
-        }
-        .legal-page p {
-            margin-bottom: 1rem;
-        }
-        .legal-page .highlight-field {
-            background-color: #fff3e8;
-            padding: 2px 4px;
-            border-bottom: 2px solid var(--orange);
-            font-weight: 600;
-        }
-    </style>
 </head>
 <body>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie-Hinweis">
+        <div class="cookie-banner__inner">
+            <p>Diese Website verwendet Cookies, um Ihnen die bestmögliche Nutzung zu ermöglichen. <a href="datenschutz.html">Mehr erfahren</a></p>
+            <div class="cookie-banner__actions">
+                <button id="cookie-accept" class="btn btn--sm">Akzeptieren</button>
+                <button id="cookie-decline" class="btn btn--sm btn--outline">Nur notwendige</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Header -->
     <header class="header" id="header">
         <div class="container header__inner">
-            <a href="/" class="header__logo">
+            <a href="index.html" class="header__logo">
                 <img src="images/logo.png" alt="Valueate Logo" width="180" height="71">
             </a>
             <nav class="header__nav" id="nav" aria-label="Hauptnavigation">
                 <ul class="header__nav-list">
-                    <li><a href="/" class="header__nav-link">Startseite</a></li>
+                    <li><a href="index.html" class="header__nav-link">Startseite</a></li>
                     <li><a href="leistungen.html" class="header__nav-link">Leistungen</a></li>
                     <li><a href="kostenersparnis-rechner.html" class="header__nav-link">Kostenrechner</a></li>
                 </ul>
@@ -63,7 +49,7 @@
     <!-- Mobile Nav Overlay -->
     <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
         <ul class="mobile-nav__list">
-            <li><a href="/" class="mobile-nav__link">Startseite</a></li>
+            <li><a href="index.html" class="mobile-nav__link">Startseite</a></li>
             <li><a href="leistungen.html" class="mobile-nav__link">Leistungen</a></li>
             <li><a href="kostenersparnis-rechner.html" class="mobile-nav__link">Kostenrechner</a></li>
         </ul>
@@ -125,8 +111,7 @@
     <footer class="footer">
         <div class="container footer__inner">
             <div class="footer__left">
-                <img src="images/logo.png" alt="Valueate Logo" width="140" height="55" class="footer__logo">
-                <p class="footer__tagline">KI-Lösungen für den Mittelstand</p>
+                <img src="images/logo-footer.png" alt="Valueate – KI-Lösungen für den Mittelstand" class="footer__logo">
             </div>
             <div class="footer__contact">
                 <h4>Kontakt</h4>
@@ -146,12 +131,8 @@
                 <ul>
                     <li><a href="impressum.html">Impressum</a></li>
                     <li><a href="datenschutz.html">Datenschutz</a></li>
+                    <li class="footer__copyright">&copy; 2026 Valueate – Bernd Weiler</li>
                 </ul>
-            </div>
-        </div>
-        <div class="footer__bottom">
-            <div class="container">
-                <p>&copy; 2026 Valueate – Bernd Weiler. Alle Rechte vorbehalten.</p>
             </div>
         </div>
     </footer>

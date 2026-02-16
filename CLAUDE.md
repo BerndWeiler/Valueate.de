@@ -13,13 +13,23 @@ Valueate.de is a static marketing website for Bernd Weiler's AI consulting and i
 **Zero-build static site** — no package manager, no bundler, no framework.
 
 - `index.html` — Homepage with all sections (hero, services, use cases, process steps, about, comparison, CTA)
+- `kostenersparnis-rechner.html` — Interactive cost savings calculator (sliders, real-time calculation)
+- `leistungen.html` — Services placeholder page (content still open)
+- `impressum.html` — Legal notice (fully implemented)
+- `datenschutz.html` — Privacy policy (fully implemented)
 - `css/style.css` — All styles, mobile-first with BEM naming convention
-- `js/main.js` — Vanilla JS in an IIFE: cookie banner, mobile nav, header scroll effect, Intersection Observer animations, smooth scrolling
-- `images/` — Static assets (logo, portraits, Storyset illustrations)
+- `js/main.js` — Vanilla JS in an IIFE: cookie banner, mobile nav, header scroll effect, Intersection Observer animations, smooth scrolling, calculator logic
+- `images/` — Static assets (logo.png for header, logo-footer.png for footer, portraits, Storyset illustrations)
 
 Reference documents (not deployed):
 - `Valueate_Website_Uebergabe_v2.md` — Canonical source for all texts, design specs, and section structure
 - `Website-Analyse_KI-Agentur.md` — Competitor analysis with recommendations
+
+## Git & Hosting
+
+- **Repository**: https://github.com/BerndWeiler/Valueate.de
+- **Branch**: main
+- **Internal links**: Use `href="index.html"` (not `href="/"`), so pages work when opened locally as files
 
 ## Development
 
@@ -28,6 +38,15 @@ No build step. Serve with any static server:
 ```bash
 python3 -m http.server 8000
 ```
+
+## Navigation Structure
+
+All pages share the same header/footer. Current nav items:
+1. **Startseite** → `index.html`
+2. **Leistungen** → `leistungen.html`
+3. **Kostenrechner** → `kostenersparnis-rechner.html`
+
+Active page gets `class="active"` on the nav link (both desktop and mobile nav).
 
 ## Homepage Section Structure
 
@@ -42,6 +61,19 @@ All sections marked ✅ FINAL in the handover doc are implemented:
 7. **Differenzierung** ("Warum Valueate?") — Comparison table (desktop) / cards (mobile)
 8. **Abschluss-CTA** — Final call-to-action with contact details
 
+## Kostenersparnis-Rechner
+
+Interactive calculator with real-time updates. Inputs:
+- **Art der Lösung**: Radio pills — KI-Sprachassistent (0,15 €/Min) or KI-Automatisierung (0,03 €/Ausführung)
+- **Aufwand pro Ausführung**: Range slider 1–60 Min
+- **Häufigkeit pro Monat**: Range slider 10–5.000x
+- **Mitarbeiterkosten**: Range slider 15–100 €/Std
+
+Formulas:
+- Manuelle Kosten/Jahr = (Min / 60) × Stundenlohn × Häufigkeit × 12
+- KI-Kosten/Jahr = Min × 0,15 × Häufigkeit × 12 (voice) OR 0,03 × Häufigkeit × 12 (automation)
+- Ersparnis = Differenz + Prozentwert
+
 ## CSS Design System
 
 CSS custom properties in `:root` (style.css):
@@ -53,11 +85,12 @@ CSS custom properties in `:root` (style.css):
 
 ## Code Conventions
 
-- **BEM naming**: `.block__element--modifier` (e.g., `.services__card`, `.btn--lg`)
+- **BEM naming**: `.block__element--modifier` (e.g., `.services__card`, `.btn--lg`, `.calc__result--highlight`)
 - **State classes**: `is-` prefix (e.g., `is-visible`, `is-open`, `is-active`, `is-scrolled`)
-- **Sections**: Each section has its own BEM namespace (`hero__`, `services__`, `steps__`, `about__`, `usecases__`, `comparison__`, `cta-final__`)
+- **Sections**: Each section has its own BEM namespace (`hero__`, `services__`, `steps__`, `about__`, `usecases__`, `comparison__`, `cta-final__`, `calc__`, `calc-page__`, `wip__`, `legal-page`)
 - **Responsive**: Mobile-first base styles, enhanced at `@media (min-width: 768px)` and `@media (min-width: 1024px)`
 - **Accessibility**: Semantic HTML, ARIA attributes on interactive elements
+- **Footer**: Shared across all pages. Logo (`logo-footer.png`), Kontakt column, Rechtliches column with copyright. Social icons have brand-color hover (WhatsApp green, LinkedIn blue).
 
 ## Language & Tone Rules
 
@@ -86,16 +119,10 @@ These rules apply to ALL German text on the site:
 - **LinkedIn**: linkedin.com/in/berndweiler
 - **Fonts**: Google Fonts CDN (DM Sans, Playfair Display)
 
-## Planned / Missing Pages
+## Planned / Missing Content
 
-- `leistungen.html` — Services detail page (content still open, should expand the 3 services from homepage)
-- `kontakt.html` — Contact & booking page (TidyCal embed + contact info)
-- `impressum.html` — Legal notice (fully implemented)
-- `datenschutz.html` — Privacy policy (fully implemented)
-
-## Planned Future Content (from competitor analysis)
-
-Priority additions when ready:
+- `leistungen.html` — Content still open, currently placeholder. Should expand the 3 services from homepage.
+- `kontakt.html` — Contact & booking page (TidyCal embed + contact info), not yet created
 - **Vertrauenssignale section** (Section 6) — testimonials, pilot project results
 - **Transparent price ranges** on services (key differentiator — no competitor shows prices)
 - **FAQ section**
