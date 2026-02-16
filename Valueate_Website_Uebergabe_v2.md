@@ -1,7 +1,7 @@
 # Valueate Website – Übergabe-Dokument v2 (Stand: 16.02.2026)
 
 ## Kontext
-Ich baue eine KI-Beratungs- und Implementierungsagentur auf. Zielgruppe: kleine und mittelständische Unternehmen. Die Website soll nahbar aber seriös wirken, Fokus auf Prozessautomatisierung, keine Buzzwords. 
+Ich baue eine KI-Beratungs- und Implementierungsagentur auf. Zielgruppe: kleine und mittelständische Unternehmen. Die Website soll nahbar aber seriös wirken, Fokus auf Prozessautomatisierung, keine Buzzwords.
 
 **Name:** Bernd Weiler
 **Live-URL (Referenz):** www.valueate.de
@@ -10,34 +10,37 @@ Ich baue eine KI-Beratungs- und Implementierungsagentur auf. Zielgruppe: kleine 
 
 ---
 
-## Navigation
-- Startseite
-- Leistungen (Detailseite – Content noch offen)
-- Kontakt & Erstgespräch (Content noch offen)
+## Navigation ✅ UMGESETZT
+- Startseite → `index.html`
+- Leistungen → `leistungen.html` ✅ mit vollem Inhalt (4 Leistungen)
+- Kostenrechner → `kostenersparnis-rechner.html` ✅
+- ~~Kontakt & Erstgespräch (Content noch offen)~~ → noch nicht umgesetzt, geplant als `kontakt.html`
 
 ---
 
 ## Sektionsaufbau der Startseite
 
-### SEKTION 1: Hero ✅ FINAL
+### SEKTION 1: Hero ✅ FINAL – UMGESETZT
 **Überschrift (H1):** „KI-Lösungen für den Mittelstand"
 **Zwei Textboxen nebeneinander (ohne Zwischenüberschriften):**
 - Links: **„Weniger Routinearbeit. Mehr Zeit fürs Wesentliche."** + „Ich helfe kleinen und mittelständischen Unternehmen, zeitfressende Abläufe mit KI zu automatisieren – von der Angebotserstellung über die Kundenkommunikation bis zur Buchhaltung."
 - Rechts: **„Kein Fachchinesisch. Sondern Ergebnisse."** + „Ich finde heraus, wo in Ihrem Alltag Stunden für Routineaufgaben draufgehen – und baue Ihnen die passende Lösung. Persönlich, verständlich und zu fairen Festpreisen."
-**CTA-Button (orange):** „Jetzt Erstgespräch vereinbaren – kostenlos & unverbindlich" → Link zu TidyCal
-**Darunter:** Professionelles Portraitfoto (liegt auf der aktuellen Seite)
+**CTA-Button (orange):** „Jetzt Erstgespräch vereinbaren – kostenlos und unverbindlich" → Link zu TidyCal
+**Darunter:** Professionelles Portraitfoto
 
-### SEKTION 2: Leistungen ✅ FINAL
-**Überschrift (H2):** „Unsere Leistungen"
-**Untertitel:** „Wir automatisieren die Aufgaben, die Sie jeden Tag Zeit kosten – einfach, pragmatisch, wirksam."
+### SEKTION 2: Leistungen ✅ FINAL – UMGESETZT
+**Überschrift (H2):** „Meine Leistungen"
+**Untertitel:** „Ich automatisiere die Aufgaben, die Sie jeden Tag Zeit kosten – einfach, pragmatisch, wirksam."
 **Drei Kacheln mit Storyset-Illustrationen (Amico-Stil, Orange-Akzente):**
-1. **Analyse & Strategie:** Ich schaue mir Ihre Abläufe an und zeige Ihnen konkret, wo KI Zeit und Geld spart – mit einer klaren Roadmap und realistischer Aufwandsschätzung.
+1. **Analyse und Strategie:** Ich schaue mir Ihre Abläufe an und zeige Ihnen konkret, wo KI Zeit und Geld spart – mit einer klaren Roadmap und realistischer Aufwandsschätzung.
 2. **KI-Automatisierung:** Ob Kundenanfragen, Angebotserstellung oder Terminplanung – ich baue Ihnen KI-Systeme, die Routinearbeit zuverlässig übernehmen.
-3. **Implementierung & Schulung:** Ich implementiere die Lösung in Ihrem Betrieb und schule Ihr Team, bis alles reibungslos läuft. Inklusive Support danach.
+3. **Implementierung und Schulung:** Ich implementiere die Lösung in Ihrem Betrieb und schule Ihr Team, bis alles reibungslos läuft. Inklusive Support danach.
+
+**Kacheln verlinken auf leistungen.html** für Details.
 
 **Design-Hinweis:** Illustrationen zeigen Menschen, nicht Technologie. Konsistenter Illustrationsstil. Illustrationen von Storyset (storyset.com), Stil: Amico mit Orange-Akzenten.
 
-### SEKTION 3: Use Cases ✅ FINAL
+### SEKTION 3: Use Cases ✅ FINAL – UMGESETZT
 **Überschrift (H2):** „Wie KI im Alltag den Unterschied macht"
 **Untertitel:** „Sie müssen kein Technik-Experte sein – diese Beispiele zeigen, was heute schon möglich ist."
 **Hintergrund:** Leicht grau (#F5F5F5), Karten weiß
@@ -49,15 +52,15 @@ Ich baue eine KI-Beratungs- und Implementierungsagentur auf. Zielgruppe: kleine 
 3. **Datenanalyse und Reporting** – Umsatzzahlen, Kundenstatistiken, Lagerbestände – Sie haben die Daten, aber keine Zeit, sie auszuwerten? KI analysiert Ihre Daten in Sekunden und liefert Ihnen übersichtliche Dashboards und fertige Reports. *Ergebnis: Auswertungen in Minuten statt Tagen* (orange)
 4. **Buchhaltung und Dokumentation** – Rechnungen abtippen, Belege sortieren, Daten aus PDFs in Excel übertragen – KI liest, erkennt und ordnet Ihre Dokumente automatisch zu – und speichert alles DSGVO-konform auf Ihren Systemen. Weniger Tipparbeit, weniger Fehler. *Typische Zeitersparnis: 3–6 Stunden pro Woche* (orange)
 
-### SEKTION 4: Vier Schritte ✅ FINAL
+### SEKTION 4: Vier Schritte ✅ FINAL – UMGESETZT
 **Überschrift (H2):** „In vier Schritten zur KI-Lösung"
 **Untertitel:** „Klar, planbar und ohne Überraschungen – so arbeiten wir zusammen."
-**Design:** Vier Karten mit orangenem Rand, Nummern-Kreise in Orange. KEINE KI-generierten Bilder neben den Karten.
+**Design:** Vier Karten mit orangenem Rand, Nummern-Kreise in Orange. KEINE KI-generierten Bilder.
 
 **Schritt 1: Erstgespräch**
 Wir sprechen 30 Minuten über Ihr Unternehmen – ganz ohne Verpflichtung. Ich möchte verstehen, wie Ihr Arbeitsalltag aussieht, welche Aufgaben immer wiederkehren und wo Sie das Gefühl haben, dass Ihr Team Zeit für Dinge aufwendet, die eigentlich einfacher gehen müssten.
 Ich verspreche Ihnen – kein Verkaufsgespräch, kein Foliendeck. Nur ein ehrliches Gespräch, nach dem Sie klarer sehen – egal ob wir danach zusammenarbeiten oder nicht.
-*Kostenlos & unverbindlich* (orange)
+*Kostenlos und unverbindlich* (orange)
 
 **Schritt 2: Analyse und Konzept**
 Ich schaue mir die Abläufe an, die wir im Erstgespräch besprochen haben, und prüfe, welche davon sich realistisch mit KI automatisieren lassen. Nicht alles, was technisch möglich ist, ergibt auch wirtschaftlich Sinn – und genau das filtere ich für Sie heraus. Sie erhalten ein klares Konzept mit konkreten Lösungsvorschlägen und einem verbindlichen Festpreis. Keine versteckten Kosten, keine offenen Stundenkontingente.
@@ -71,9 +74,9 @@ Ich entwickle Ihre individuelle KI-Lösung – ob Automatisierung, Voice Agent, 
 Eine Lösung ist nur so gut wie die Menschen, die sie nutzen. Deshalb schule ich Sie und Ihr Team persönlich, bis jeder sicher damit umgehen kann – verständlich erklärt, ohne Technik-Jargon. Und wenn danach doch eine Frage auftaucht oder sich etwas an Ihren Abläufen ändert: Ich bin weiterhin Ihr Ansprechpartner und passe die Lösung an, wenn nötig.
 *Persönliche Einarbeitung inklusive* (orange)
 
-**Direkt nach Schritt 4:** CTA-Button „Jetzt Erstgespräch vereinbaren – kostenlos & unverbindlich" → TidyCal
+**Direkt nach Schritt 4:** CTA-Button „Jetzt Erstgespräch vereinbaren – kostenlos und unverbindlich" → TidyCal
 
-### SEKTION 5: Über mich ✅ FINAL
+### SEKTION 5: Über mich ✅ FINAL – UMGESETZT
 **Überschrift (H2):** „Über mich"
 **Layout:** Text links, Portraitfoto rechts mit Kennzahlen-Kacheln (>300 Mio Umsatz/Jahr, 17 Jahre)
 
@@ -92,7 +95,7 @@ Viele Grüße und bis bald
 ### SEKTION 6: Vertrauenssignale ⏳ KOMMT SPÄTER
 Testimonials, Zahlen – sobald verfügbar (auch von Pilotprojekten)
 
-### SEKTION 7: Differenzierung ✅ FINAL
+### SEKTION 7: Differenzierung ✅ FINAL – UMGESETZT
 **Überschrift (H2):** „Warum Valueate?"
 
 **Einleitungstext:**
@@ -113,7 +116,7 @@ Ich komme aus der Konzernwelt – und weiß deshalb, was dort gut läuft und was
 
 **Design:** Linke Spalte grau/gedämpft, rechte Spalte (Valueate) mit orangem Header und leichtem orange Hintergrund. Mobile: Karten mit orangem linkem Rand, ✕ für große Beratungen, ✓ (orange) für Valueate.
 
-### SEKTION 8: Abschluss-CTA ✅ FINAL
+### SEKTION 8: Abschluss-CTA ✅ FINAL – UMGESETZT
 **Überschrift (H2):** „Lassen Sie uns sprechen"
 
 **Text:**
@@ -127,13 +130,40 @@ Telefon: +49 152 06237493
 
 ---
 
-## Unterseiten (Content noch offen)
+## Unterseiten
 
-### Leistungen (Detailseite)
-Content muss noch erarbeitet werden. Soll die drei Leistungen von der Startseite vertiefen mit mehr Details, Ablauf und ggf. Beispielen.
+### Leistungen (Detailseite) ✅ UMGESETZT
+`leistungen.html` – Vier Leistungsblöcke mit abwechselndem Layout (Bild links/rechts), jeweils mit ausführlichem Text, Bullet-Liste und individuellem CTA:
 
-### Kontakt & Erstgespräch
-Content muss noch erarbeitet werden. TidyCal-Embed + Kontaktdaten + kurzer Text.
+1. **Analyse und Strategie** – Storyset-Illustration (`illustration-analyse.png`), Fokus auf Prozessanalyse, KI-Potenzial, Roadmap, Aufwandsschätzung
+2. **KI-Automatisierung** – Storyset-Illustration (`illustration-automatisierung.png`), Fokus auf Sprachassistenten, Dokumentenverarbeitung, Workflow-Automatisierung, Systemanbindung
+3. **Implementierung und Schulung** – Storyset-Illustration (`illustration-schulung.png`), Fokus auf Installation, Team-Schulung, Support, Anpassungen
+4. **Website-Erstellung** – Storyset-Illustration (`illustration-website.png`), professionelle Website für KMU, responsives Design, SEO, schnelle Ladezeiten, Übergabe mit Einweisung
+
+### Kostenersparnis-Rechner ✅ UMGESETZT
+`kostenersparnis-rechner.html` – Interaktiver Rechner mit Echtzeit-Berechnung der KI-Kostenersparnis.
+
+### Impressum ✅ UMGESETZT
+`impressum.html` – Vollständig, noindex.
+
+### Datenschutz ✅ UMGESETZT
+`datenschutz.html` – Vollständig, noindex.
+
+### Kontakt und Erstgespräch ⏳ NOCH OFFEN
+Geplant als `kontakt.html`. TidyCal-Embed + Kontaktdaten + kurzer Text. Noch nicht umgesetzt.
+
+---
+
+## SEO und Technik ✅ UMGESETZT
+
+- `robots.txt` – erlaubt alle Crawler, verweist auf Sitemap
+- `sitemap.xml` – alle 5 Seiten mit Prioritäten
+- Meta-Tags: `index, follow` auf allen Inhaltsseiten, `noindex, follow` auf Legal-Seiten
+- Canonical-URLs auf allen Seiten
+- Strukturierte Daten (Schema.org ProfessionalService) auf der Startseite
+- Cookie-Banner mit Akzeptieren/Ablehnen
+- Seitentitel: „KI-Systeme für kleine und mittlere Unternehmen | Valueate – Bernd Weiler"
+- Nur ein H1 pro Seite
 
 ---
 
@@ -143,28 +173,32 @@ Content muss noch erarbeitet werden. TidyCal-Embed + Kontaktdaten + kurzer Text.
 - **Orange (Primär):** #E6821F – für CTAs, Icons, Highlights, Akzente
 - **Hintergrund-Wechsel:** Weiß (#FFFFFF) und Hellgrau (#F5F5F5) im Wechsel
 - **Text:** Dunkel (#1A1A1A bis #2D2D2D)
-- **Sekundärtext:** #444 bis #777
+- **Sekundärtext:** #555 bis #777
 
-### Layout & Visuell
+### Typografie ✅ UMGESETZT
+- **Überschriften:** Playfair Display (Google Fonts) – seriös mit Charakter
+- **Fließtext:** DM Sans (Google Fonts) – modern, gut lesbar
+- Eingebunden via Google Fonts CDN
+
+### Layout und Visuell
 - Visueller Rhythmus: Sektionen mit wechselnden Hintergründen (weiß/grau)
 - Menschen statt Technik in Illustrationen
 - Nur EIN primärer CTA (Kalender-Buchung), nicht mehrere verschiedene
 - Keine KI-generierten fotorealistischen Bilder (schadet Glaubwürdigkeit bei KI-Beratung)
-- Storyset-Illustrationen (Amico-Stil) nur bei Leistungen, Icons bei Use Cases
+- Storyset-Illustrationen (Amico-Stil) bei Leistungen, Icons bei Use Cases
 - Icons: Lucide/Tabler/Phosphor (kostenlos, SVG)
-- Mobile-First Design
-
-### Typografie
-- Aktuelle Seite nutzt System-Fonts – finale Seite soll eine saubere, professionelle Schrift verwenden (kein Inter/Roboto, etwas mit Charakter das aber seriös bleibt)
+- Mobile-First Design mit Breakpoints bei 768px, 1024px, 1280px
+- BEM-Namenskonvention im CSS
 
 ---
 
-## Sprache & Ton
+## Sprache und Ton
 - Siezen (nicht Duzen)
 - Ich-Form (nicht „wir" außer bei gemeinsamen Aktivitäten wie „wir sprechen")
 - Keine Buzzwords, kein Fachchinesisch
 - Kein „Agenten" (zu technisch für KMU) → „KI-Automatisierung"
-- Keine Doppelpunkte vor Aufzählungen → Gedankenstriche
+- „und" statt „&" in sichtbarem Text
+- Gedankenstriche (–) statt Doppelpunkte vor Aufzählungen
 - Gedankenstrich (–) statt Punkt in Überschriften
 
 ---
@@ -172,7 +206,8 @@ Content muss noch erarbeitet werden. TidyCal-Embed + Kontaktdaten + kurzer Text.
 ## Kontaktdaten
 - **E-Mail:** kontakt@valueate.de
 - **Telefon:** +49 152 06237493
-- **WhatsApp:** Gleiche Nummer, Button auf der Seite
+- **WhatsApp:** Gleiche Nummer, Button im Footer
+- **LinkedIn:** linkedin.com/in/berndweiler
 - **TidyCal:** https://tidycal.com/valueate/erstgespraech
 
 ## TidyCal-Setup
@@ -180,19 +215,60 @@ Content muss noch erarbeitet werden. TidyCal-Embed + Kontaktdaten + kurzer Text.
 - Untertitel: „30 Minuten – persönlich, unverbindlich, ohne Verkaufsdruck"
 - Felder: Name, E-Mail, Firmenname (Pflicht) + „Was ist Ihre größte Zeitfresse im Arbeitsalltag?" (optional)
 - Confirmation: Calendar Invitation (nicht Email)
-- Verfügbarkeit: Mo-Fr, 9-12 & 14-16 Uhr, 24h Vorlaufzeit, 15 Min. Puffer
+- Verfügbarkeit: Mo-Fr, 9-12 und 14-16 Uhr, 24h Vorlaufzeit, 15 Min. Puffer
 
-## SEO
-- Seitentitel: „KI-Systeme für kleine und mittlere Unternehmen | Valueate - Bernd Weiler"
-- Nur ein H1 pro Seite, Rest H2
-- Strukturierte Daten (Schema.org) für lokale Suche
-- Cookie-Banner & DSGVO-konform
-- SSL-Zertifikat
+---
 
-## Bilder / Assets auf der aktuellen Seite
-- 2 Portraitfotos von Bernd Weiler (Hero + Über mich)
-- 3 Storyset-Illustrationen (Amico-Stil) bei den Leistungen
-- KI-generierte Bilder (Gemini) bei Use Cases und Vier Schritte → MÜSSEN ENTFERNT WERDEN
+## Bilder und Assets ✅ AKTUELL
+
+| Datei | Verwendung | Status |
+|---|---|---|
+| `portrait-hero.jpg` | Hero-Sektion Startseite | ✅ |
+| `portrait-about.jpg` | Über-mich-Sektion Startseite | ✅ |
+| `illustration-analyse.png` | Leistung 1 (Startseite + Leistungsseite) | ✅ Storyset Amico |
+| `illustration-automatisierung.png` | Leistung 2 (Startseite + Leistungsseite) | ✅ Storyset Amico |
+| `illustration-schulung.png` | Leistung 3 (Startseite + Leistungsseite) | ✅ Storyset Amico |
+| `illustration-website.png` | Leistung 4 (nur Leistungsseite) | ✅ Storyset Amico |
+| `logo.png` | Header | ✅ |
+| `logo-footer.png` | Footer | ✅ |
+
+~~KI-generierte Bilder (Gemini) bei Use Cases und Vier Schritte~~ → entfernt, durch SVG-Icons bzw. cleane Karten ersetzt.
+
+---
+
+## Hosting ✅ ENTSCHIEDEN
+- **Anbieter:** Hostinger
+- **Upload:** Statische Dateien direkt in `public_html/`
+- **Domain:** www.valueate.de
+
+### Upload-Struktur für Hostinger
+
+Nur diese Dateien hochladen:
+```
+public_html/
+├── index.html
+├── leistungen.html
+├── kostenersparnis-rechner.html
+├── impressum.html
+├── datenschutz.html
+├── robots.txt
+├── sitemap.xml
+├── css/
+│   └── style.css
+├── js/
+│   └── main.js
+└── images/
+    ├── illustration-analyse.png
+    ├── illustration-automatisierung.png
+    ├── illustration-schulung.png
+    ├── illustration-website.png
+    ├── logo.png
+    ├── logo-footer.png
+    ├── portrait-about.jpg
+    └── portrait-hero.jpg
+```
+
+**NICHT hochladen:** `.git/`, `.claude/`, `.cursor/`, `.gitignore`, `.DS_Store`, `CLAUDE.md`, `Valueate_Website_Uebergabe_v2.md`, `Website-Analyse_KI-Agentur.md`
 
 ---
 
@@ -203,52 +279,14 @@ Content muss noch erarbeitet werden. TidyCal-Embed + Kontaktdaten + kurzer Text.
 
 ---
 
-# Anhang: Tipps für den Claude-Code-Prompt
+## Offene Punkte / Nächste Schritte
 
-## Empfohlener Prompt für Claude Code
-
-```
-Ich möchte meine Website www.valueate.de komplett neu bauen – besser, professioneller, 
-mit perfektem Layout und Mobile-Optimierung. 
-
-Bitte lies zuerst die beiden angehängten Dokumente:
-1. Valueate_Website_Uebergabe_v2.md – enthält alle finalen Texte, Design-Vorgaben und Struktur
-2. Website-Analyse_KI-Agentur.md – Konkurrenzanalyse mit Best Practices
-
-Dann schau dir die aktuelle Live-Seite an: https://valueate.de/
-
-Aufgabe:
-- Baue die komplette Website als statische HTML/CSS/JS-Seite nach
-- Übernimm ALLE Texte exakt wie im Übergabe-Dokument
-- Lade die Portraitfotos und Storyset-Illustrationen von der aktuellen Seite herunter und verwende sie
-- ENTFERNE alle KI-generierten Bilder (Gemini) bei Use Cases und Vier Schritte
-- Use Cases: 2x2 Karten-Raster mit kleinen SVG-Icons (Lucide), keine Bilder
-- Vier Schritte: Cleane Karten mit orangenem Rand und Nummern-Kreisen, keine Bilder
-- Vergleichstabelle (Warum Valueate?): Responsive – Tabelle auf Desktop, Karten auf Mobile
-- Erstelle auch Unterseiten für "Leistungen" und "Kontakt & Erstgespräch" (Grundstruktur)
-- Mobile-First, schnell, SEO-optimiert
-- Markenfarbe Orange: #E6821F
-- Professionelle Schrift (kein Inter/Roboto)
-- DSGVO: Cookie-Banner, Impressum-Link, Datenschutz-Link im Footer
-
-Qualitätsstandard: Die Seite soll aussehen wie von einer professionellen Agentur gebaut – 
-nicht wie ein Website-Builder-Template.
-```
-
-## Wichtige Hinweise für Claude Code
-
-1. **Bilder herunterladen:** Die Fotos und Illustrationen liegen auf der Hostinger-Seite. Claude Code muss sie per URL herunterladen und lokal einbinden.
-
-2. **Hosting-Frage:** Die fertige Seite muss irgendwo gehostet werden. Optionen:
-   - Weiterhin Hostinger (HTML-Upload)
-   - Netlify / Vercel (kostenlos, schnell)
-   - GitHub Pages (kostenlos)
-   → Entscheide dich vorher, damit Claude Code die richtige Deployment-Struktur baut.
-
-3. **Domain:** www.valueate.de muss auf das neue Hosting umgestellt werden (DNS-Einstellungen bei deinem Domain-Provider).
-
-4. **Impressum & Datenschutz:** Musst du selbst erstellen oder einen Generator nutzen (z.B. e-recht24.de). Claude Code kann die Seiten-Templates dafür vorbereiten.
-
-5. **TidyCal-Einbindung:** Entweder als externer Link (Button → tidycal.com) oder als Embed (iframe auf der Kontaktseite). Beides funktioniert.
-
-6. **Iterativ arbeiten:** Lass Claude Code erst die Startseite bauen und prüfe das Ergebnis, bevor du die Unterseiten beauftragst. So vermeidest du, dass Fehler sich durchziehen.
+- [ ] **Kontaktseite** (`kontakt.html`) – TidyCal-Embed + Kontaktdaten
+- [ ] **Vertrauenssignale** (Sektion 6) – Testimonials, Pilotprojekt-Ergebnisse
+- [ ] **Transparente Preisbereiche** auf Leistungsseite – Differenzierungsmerkmal
+- [ ] **FAQ-Sektion** – Häufige Fragen von KMU-Kunden
+- [ ] **Blog** – Praktische Artikel für KMU (SEO-Content)
+- [ ] **Branchenspezifische Seiten** – Handwerk, Gastronomie, E-Commerce, Dienstleistungen, Gesundheitswesen
+- [ ] **Lead Magnet** – z.B. „KI-Checkliste" als PDF-Download
+- [ ] **SSL-Zertifikat** prüfen auf Hostinger
+- [ ] **Google Search Console** einrichten und Sitemap einreichen
