@@ -90,8 +90,8 @@ These rules apply to ALL German text on the site:
 
 - `leistungen.html` — Services detail page (content still open, should expand the 3 services from homepage)
 - `kontakt.html` — Contact & booking page (TidyCal embed + contact info)
-- `impressum.html` — Legal notice (content must be created by owner)
-- `datenschutz.html` — Privacy policy (content must be created by owner)
+- `impressum.html` — Legal notice (fully implemented)
+- `datenschutz.html` — Privacy policy (fully implemented)
 
 ## Planned Future Content (from competitor analysis)
 

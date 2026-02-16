@@ -208,7 +208,7 @@ h1, h2, h3, h4 {
 }
 
 .header__logo img {
-    height: 40px;
+    height: 78px;
     width: auto;
 }
 
@@ -786,25 +786,20 @@ h1, h2, h3, h4 {
 .footer {
     background: var(--text-dark);
     color: #ccc;
-    padding: 3rem 0 0;
+    padding: 2.5rem 0 0;
 }
 
 .footer__inner {
     display: grid;
-    gap: 2rem;
-    padding-bottom: 2rem;
+    gap: 3rem;
+    padding-bottom: 3rem;
+    align-items: start;
 }
 
 .footer__logo {
-    height: 35px;
-    width: auto;
-    filter: brightness(0) invert(1);
-    margin-bottom: 0.5rem;
-}
-
-.footer__tagline {
-    font-size: 0.875rem;
-    color: #999;
+    height: auto;
+    width: 220px;
+    border-radius: var(--radius-sm);
 }
 
 .footer h4 {
@@ -830,6 +825,7 @@ h1, h2, h3, h4 {
     display: flex;
     gap: 1rem;
     margin-top: 0.75rem;
+    padding-bottom: 1.5rem;
 }
 
 .footer__social a {
@@ -843,8 +839,12 @@ h1, h2, h3, h4 {
     transition: background var(--transition);
 }
 
-.footer__social a:hover {
-    background: var(--orange);
+.footer__social a[aria-label="WhatsApp"]:hover {
+    background: #25D366;
+}
+
+.footer__social a[aria-label="LinkedIn"]:hover {
+    background: #0A66C2;
 }
 
 .footer__social svg {
@@ -860,12 +860,10 @@ h1, h2, h3, h4 {
     margin-bottom: 0.4rem;
 }
 
-.footer__bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 1.25rem 0;
-    text-align: center;
-    font-size: 0.8rem;
-    color: #888;
+.footer__copyright {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: #666;
 }
 
 /* ==========================================================================
@@ -1048,6 +1046,40 @@ h1, h2, h3, h4 {
 
 .skip-link:focus {
     top: 0.5rem;
+}
+
+/* ==========================================================================
+   Work in Progress / Placeholder Page
+   ========================================================================== */
+.wip {
+    padding: calc(var(--header-height) + 5rem) 0 5rem;
+    background: var(--bg-gray);
+    text-align: center;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+.wip__icon {
+    margin-bottom: 2rem;
+}
+
+.wip__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.wip__text {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .wip__title {
+        font-size: 2.5rem;
+    }
 }
 
 /* ==========================================================================
