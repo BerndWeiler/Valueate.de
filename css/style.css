@@ -1363,6 +1363,7 @@ h1, h2, h3, h4 {
 .logo-marquee__logo {
     height: 36px;
     width: auto;
+    max-width: none;
     filter: grayscale(100%) opacity(0.4);
     transition: filter 0.3s ease;
 }
