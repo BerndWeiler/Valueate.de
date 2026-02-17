@@ -1322,6 +1322,116 @@ h1, h2, h3, h4 {
 }
 
 /* ==========================================================================
+   Logo Marquee (Leistungen Page – Trust Band)
+   ========================================================================== */
+.logo-marquee {
+    padding: 3rem 0;
+    background: var(--bg-white);
+    overflow: hidden;
+}
+
+.logo-marquee__title {
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo-marquee__track {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.logo-marquee__scroll {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    width: max-content;
+    animation: marquee 40s linear infinite;
+    will-change: transform;
+}
+
+.logo-marquee__link {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.logo-marquee__logo {
+    height: 36px;
+    width: auto;
+    filter: grayscale(100%) opacity(0.4);
+    transition: filter 0.3s ease;
+}
+
+.logo-marquee__link:hover .logo-marquee__logo {
+    filter: grayscale(0%) opacity(1);
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause on hover for accessibility */
+.logo-marquee__track:hover .logo-marquee__scroll {
+    animation-play-state: paused;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .logo-marquee__scroll {
+        animation: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: auto;
+        gap: 2rem;
+        padding: 0 1.25rem;
+    }
+
+    .logo-marquee__track {
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .logo-marquee {
+        padding: 4rem 0;
+    }
+
+    .logo-marquee__title {
+        font-size: 1.75rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .logo-marquee__logo {
+        height: 44px;
+    }
+
+    .logo-marquee__scroll {
+        gap: 4rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .logo-marquee__logo {
+        height: 48px;
+    }
+
+    .logo-marquee__scroll {
+        gap: 5rem;
+    }
+}
+
+/* ==========================================================================
    Calculator Page
    ========================================================================== */
 .calc-page {
