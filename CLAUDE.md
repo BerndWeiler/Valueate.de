@@ -17,13 +17,16 @@ Valueate.de is a static marketing website for Bernd Weiler's AI consulting and i
 - `index.html` — Homepage with all sections (hero, services, use cases, process steps, about, comparison, CTA)
 - `leistungen.html` — Services detail page with 4 service blocks (Analyse, Automatisierung, Schulung, Website-Erstellung)
 - `kostenersparnis-rechner.html` — Interactive cost savings calculator (sliders, real-time calculation)
+- `kontakt.html` — Contact page (form, direct contact info, WhatsApp button, TidyCal booking CTA)
+- `send-mail.php` — PHP mail script for contact form (honeypot spam protection, server-side validation)
 - `impressum.html` — Legal notice (fully implemented)
 - `datenschutz.html` — Privacy policy (fully implemented)
 - `css/style.css` — All styles, mobile-first with BEM naming convention
-- `js/main.js` — Vanilla JS in an IIFE: cookie banner, mobile nav, header scroll effect, Intersection Observer animations, smooth scrolling, calculator logic
+- `js/main.js` — Vanilla JS in an IIFE: cookie banner, mobile nav, header scroll effect, Intersection Observer animations, smooth scrolling, calculator logic, contact form success/error messages
 - `images/` — Static assets (logo.png for header, logo-footer.png for footer, portraits, 4 Storyset illustrations)
+- `images/logos/` — 15 partner/tool logos (SVG + 1 PNG) for the logo marquee on `leistungen.html`
 - `robots.txt` — Allows all crawlers, references sitemap
-- `sitemap.xml` — All 5 pages with priority weights
+- `sitemap.xml` — All 6 pages with priority weights
 
 Reference documents (not deployed):
 - `Valueate_Website_Uebergabe_v2.md` — Canonical source for all texts, design specs, and section structure
@@ -41,11 +44,13 @@ Reference documents (not deployed):
 Only deploy these files — everything else stays local:
 ```
 public_html/
-├── index.html, leistungen.html, kostenersparnis-rechner.html, impressum.html, datenschutz.html
+├── index.html, leistungen.html, kostenersparnis-rechner.html, kontakt.html, impressum.html, datenschutz.html
+├── send-mail.php
 ├── robots.txt, sitemap.xml
 ├── css/style.css
 ├── js/main.js
-└── images/ (all 8 image files)
+├── images/ (all 8 image files)
+└── images/logos/ (15 logo files for marquee)
 ```
 
 **DO NOT upload:** `.git/`, `.claude/`, `.cursor/`, `.gitignore`, `.DS_Store`, `CLAUDE.md`, `*.md` reference docs
@@ -64,6 +69,7 @@ All pages share the same header/footer. Current nav items:
 1. **Startseite** → `index.html`
 2. **Leistungen** → `leistungen.html`
 3. **Kostenrechner** → `kostenersparnis-rechner.html`
+4. **Kontakt** → `kontakt.html`
 
 Active page gets `class="active"` on the nav link (both desktop and mobile nav).
 
@@ -90,6 +96,19 @@ All sections marked ✅ FINAL in the handover doc are implemented:
 
 Each block: H2 title, 2 paragraphs, orange bullet list (`.leistungen__list`), individual CTA button.
 
+### Logo Marquee (Trust Band)
+
+Scrolling logo band between the last service block and the CTA section. Title: "Wir arbeiten mit Produkten von".
+
+- **BEM namespace**: `.logo-marquee`, `.logo-marquee__track`, `.logo-marquee__scroll`, `.logo-marquee__link`, `.logo-marquee__logo`
+- **15 logos** (OpenAI, Anthropic, Google, Mistral AI, IONOS, Perplexity, Meta, Apple, Microsoft, AWS, GitHub, Hostinger, Midjourney, Black Forest Labs, ElevenLabs)
+- **Technique**: HTML duplicated (2×15 = 30 img tags), CSS `@keyframes marquee` with `translateX(-50%)` for seamless infinite loop
+- **Styling**: `filter: grayscale(100%) opacity(0.4)`, full color on hover, `mask-image` fade edges left/right
+- **Accessibility**: Pause on hover, `prefers-reduced-motion` fallback (static wrapped grid), duplicate logos have `aria-hidden="true"` and `tabindex="-1"`
+- Each logo is wrapped in an `<a>` tag linking to the company website
+- **Important CSS**: `max-width: none` on `.logo-marquee__logo` to override global `img { max-width: 100% }` — without this, logos collapse in Safari
+- Logo files in `images/logos/` (14 SVG + 1 PNG for BFL)
+
 ## Kostenersparnis-Rechner
 
 Interactive calculator with real-time updates. Inputs:
@@ -107,7 +126,7 @@ Formulas:
 
 - **Schema.org** (JSON-LD on `index.html`): `ProfessionalService` with full address (Biberach), geo coordinates, 11 `areaServed` entries (cities + states)
 - **Geo meta tags** on all indexed pages: `geo.region` (DE-BW), `geo.placename`, `geo.position`, `ICBM`
-- **OG tags** on `index.html`, `leistungen.html`, `kostenersparnis-rechner.html`
+- **OG tags** on `index.html`, `leistungen.html`, `kostenersparnis-rechner.html`, `kontakt.html`
 - **Meta robots**: `index, follow` on content pages; `noindex, follow` on legal pages
 - **Canonical URLs** on all indexed pages
 - `robots.txt` + `sitemap.xml` with priorities
@@ -126,7 +145,7 @@ CSS custom properties in `:root` (style.css):
 
 - **BEM naming**: `.block__element--modifier` (e.g., `.services__card`, `.btn--lg`, `.calc__result--highlight`)
 - **State classes**: `is-` prefix (e.g., `is-visible`, `is-open`, `is-active`, `is-scrolled`)
-- **Sections**: Each section has its own BEM namespace (`hero__`, `services__`, `leistungen__`, `steps__`, `about__`, `usecases__`, `comparison__`, `cta-final__`, `calc__`, `calc-page__`, `legal-page`)
+- **Sections**: Each section has its own BEM namespace (`hero__`, `services__`, `leistungen__`, `logo-marquee__`, `steps__`, `about__`, `usecases__`, `comparison__`, `cta-final__`, `calc__`, `calc-page__`, `contact-page__`, `contact__`, `legal-page`)
 - **Responsive**: Mobile-first base styles, enhanced at `@media (min-width: 768px)` and `@media (min-width: 1024px)`
 - **Accessibility**: Semantic HTML, ARIA attributes on interactive elements
 - **Footer**: Shared across all pages. Logo (`logo-footer.png`), Kontakt column (with Standort), Rechtliches column with copyright. Social icons have brand-color hover (WhatsApp green, LinkedIn blue).
@@ -137,7 +156,7 @@ These rules apply to ALL German text on the site:
 - **Siezen** (formal "Sie"), never "du"
 - **Ich-Form** ("Ich helfe..."), not "wir" — except for shared activities ("wir sprechen")
 - No buzzwords, no technical jargon ("Fachchinesisch")
-- Never use "Agenten" (too technical for SME audience) — use "KI-Automatisierung" instead
+- Never use "Agenten" or "Agent" (too technical for SME audience) — use "KI-Automatisierung" or "KI-Sprachassistent" instead
 - **"und" instead of "&"** in all visible text
 - Use Gedankenstriche (–) instead of colons before lists
 - Use Gedankenstrich (–) instead of periods in headlines
@@ -162,16 +181,20 @@ These rules apply to ALL German text on the site:
 
 ## Planned / Missing Content
 
-- `kontakt.html` — Contact & booking page (TidyCal embed + contact info), not yet created
-- **Vertrauenssignale section** (Section 6) — testimonials, pilot project results
-- **Transparent price ranges** on services (key differentiator — no competitor shows prices)
-- **FAQ section**
-- **Blog** with practical SME-focused articles
+### High Priority
+- **Transparent price ranges** on `leistungen.html` (key differentiator — no competitor shows prices)
+- **Google Search Console** einrichten und Sitemap einreichen
+
+### Medium Priority
+- **FAQ section** — Häufige Fragen von KMU-Kunden
+- **Vertrauenssignale section** (Section 6 on homepage) — testimonials, pilot project results (when available)
+- **Google Business Profile** einrichten (local SEO)
+
+### Low Priority (Content-Marketing / Scale)
+- **Blog** with practical SME-focused articles (SEO content)
 - **Branch-specific pages** (Handwerk, Gastronomie, E-Commerce, Dienstleistungen, Gesundheitswesen)
 - **City-specific landing pages** (e.g., ki-beratung-ulm.html) for stronger local SEO
 - **Lead magnet** (e.g., "KI-Checkliste" PDF download)
-- **Google Business Profile** einrichten
-- **Google Search Console** einrichten und Sitemap einreichen
 
 ## Key Competitor Insight
 

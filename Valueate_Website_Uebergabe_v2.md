@@ -1,4 +1,4 @@
-# Valueate Website – Übergabe-Dokument v2 (Stand: 16.02.2026)
+# Valueate Website – Übergabe-Dokument v2 (Stand: 17.02.2026)
 
 ## Kontext
 Ich baue eine KI-Beratungs- und Implementierungsagentur auf. Zielgruppe: kleine und mittelständische Unternehmen. Die Website soll nahbar aber seriös wirken, Fokus auf Prozessautomatisierung, keine Buzzwords.
@@ -14,7 +14,7 @@ Ich baue eine KI-Beratungs- und Implementierungsagentur auf. Zielgruppe: kleine 
 - Startseite → `index.html`
 - Leistungen → `leistungen.html` ✅ mit vollem Inhalt (4 Leistungen)
 - Kostenrechner → `kostenersparnis-rechner.html` ✅
-- ~~Kontakt & Erstgespräch (Content noch offen)~~ → noch nicht umgesetzt, geplant als `kontakt.html`
+- Kontakt → `kontakt.html` ✅ Kontaktformular, Direktkontakt, TidyCal-CTA
 
 ---
 
@@ -140,6 +140,9 @@ Telefon: +49 152 06237493
 3. **Implementierung und Schulung** – Storyset-Illustration (`illustration-schulung.png`), Fokus auf Installation, Team-Schulung, Support, Anpassungen
 4. **Website-Erstellung** – Storyset-Illustration (`illustration-website.png`), professionelle Website für KMU, responsives Design, SEO, schnelle Ladezeiten, Übergabe mit Einweisung
 
+**Logo-Marquee Trust-Band** ✅ UMGESETZT (17.02.2026)
+Scrollendes Logo-Band zwischen letztem Leistungsblock und Abschluss-CTA. Überschrift: „Wir arbeiten mit Produkten von". 15 verlinkte Logos (OpenAI, Anthropic, Google, Mistral AI, IONOS, Perplexity, Meta, Apple, Microsoft, AWS, GitHub, Hostinger, Midjourney, Black Forest Labs, ElevenLabs). Reine CSS-Animation, Grayscale-Filter mit Farbe bei Hover, Fade-Ränder, Pause bei Hover, Reduced-Motion-Fallback. Logo-Dateien in `images/logos/` (14 SVG + 1 PNG).
+
 ### Kostenersparnis-Rechner ✅ UMGESETZT
 `kostenersparnis-rechner.html` – Interaktiver Rechner mit Echtzeit-Berechnung der KI-Kostenersparnis.
 
@@ -149,8 +152,8 @@ Telefon: +49 152 06237493
 ### Datenschutz ✅ UMGESETZT
 `datenschutz.html` – Vollständig, noindex.
 
-### Kontakt und Erstgespräch ⏳ NOCH OFFEN
-Geplant als `kontakt.html`. TidyCal-Embed + Kontaktdaten + kurzer Text. Noch nicht umgesetzt.
+### Kontakt ✅ UMGESETZT
+`kontakt.html` – Kontaktformular (sendet per PHP `mail()` an kontakt@valueate.de), Direktkontakt-Spalte (Telefon, E-Mail, WhatsApp-Button, Standort), TidyCal-Buchungssektion. Honeypot-Spam-Schutz, serverseitige Validierung, Erfolgs-/Fehlermeldung per URL-Parameter.
 
 ---
 
@@ -231,6 +234,8 @@ Geplant als `kontakt.html`. TidyCal-Embed + Kontaktdaten + kurzer Text. Noch nic
 | `illustration-website.png` | Leistung 4 (nur Leistungsseite) | ✅ Storyset Amico |
 | `logo.png` | Header | ✅ |
 | `logo-footer.png` | Footer | ✅ |
+| `images/logos/*.svg` | Logo-Marquee Leistungsseite (14 SVG) | ✅ |
+| `images/logos/bfl.png` | Logo-Marquee Black Forest Labs (1 PNG) | ✅ |
 
 ~~KI-generierte Bilder (Gemini) bei Use Cases und Vier Schritte~~ → entfernt, durch SVG-Icons bzw. cleane Karten ersetzt.
 
@@ -265,7 +270,12 @@ public_html/
     ├── logo.png
     ├── logo-footer.png
     ├── portrait-about.jpg
-    └── portrait-hero.jpg
+    ├── portrait-hero.jpg
+    └── logos/
+        ├── openai.svg, anthropic.svg, google.svg, mistral.svg, ionos.svg
+        ├── perplexity.svg, meta.svg, apple.svg, microsoft.svg, aws.svg
+        ├── github.svg, hostinger.svg, midjourney.svg, elevenlabs.svg
+        └── bfl.png
 ```
 
 **NICHT hochladen:** `.git/`, `.claude/`, `.cursor/`, `.gitignore`, `.DS_Store`, `CLAUDE.md`, `Valueate_Website_Uebergabe_v2.md`, `Website-Analyse_KI-Agentur.md`
@@ -281,12 +291,24 @@ public_html/
 
 ## Offene Punkte / Nächste Schritte
 
-- [ ] **Kontaktseite** (`kontakt.html`) – TidyCal-Embed + Kontaktdaten
-- [ ] **Vertrauenssignale** (Sektion 6) – Testimonials, Pilotprojekt-Ergebnisse
-- [ ] **Transparente Preisbereiche** auf Leistungsseite – Differenzierungsmerkmal
+### Hohe Priorität
+- [x] **Kontaktseite** (`kontakt.html`) – ✅ Kontaktformular + Direktkontakt + TidyCal-CTA
+- [ ] **Transparente Preisbereiche** auf Leistungsseite – stärkstes Differenzierungsmerkmal vs. Wettbewerb
+- [ ] **Google Search Console** einrichten und Sitemap einreichen
+
+### Mittlere Priorität
 - [ ] **FAQ-Sektion** – Häufige Fragen von KMU-Kunden
+- [ ] **Vertrauenssignale** (Sektion 6) – Testimonials, Pilotprojekt-Ergebnisse (wenn verfügbar)
+- [ ] **Google Business Profile** einrichten (lokales SEO)
+
+### Niedrige Priorität (Content-Marketing / Skalierung)
 - [ ] **Blog** – Praktische Artikel für KMU (SEO-Content)
 - [ ] **Branchenspezifische Seiten** – Handwerk, Gastronomie, E-Commerce, Dienstleistungen, Gesundheitswesen
+- [ ] **Stadt-Landingpages** – z.B. `ki-beratung-ulm.html` für stärkeres lokales SEO
 - [ ] **Lead Magnet** – z.B. „KI-Checkliste" als PDF-Download
-- [ ] **SSL-Zertifikat** prüfen auf Hostinger
-- [ ] **Google Search Console** einrichten und Sitemap einreichen
+
+### Erledigt (17.02.2026)
+- [x] **Logo-Marquee Trust-Band** auf Leistungsseite – 15 verlinkte Partner-Logos
+- [x] **„Voice Agent" → „KI-Sprachassistent"** – Sprachrichtlinie korrigiert
+- [x] **CTA-Texte angeglichen** – Leistungsseite an Startseite angepasst
+- [x] **Sitemap lastmod** aktualisiert

@@ -107,6 +107,21 @@
         });
     });
 
+    // --- Kontaktformular: Erfolgs-/Fehlermeldung ---
+    var urlParams = new URLSearchParams(window.location.search);
+    var successBox = document.getElementById('contact-success');
+    var errorBox = document.getElementById('contact-error');
+
+    if (urlParams.get('success') === '1' && successBox) {
+        successBox.classList.add('is-visible');
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    if (urlParams.get('error') === '1' && errorBox) {
+        errorBox.classList.add('is-visible');
+        errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
     // --- Kostenersparnis-Rechner ---
     var calcEl = document.querySelector('.calc');
 
