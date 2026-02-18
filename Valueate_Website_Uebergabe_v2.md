@@ -24,7 +24,7 @@ Ich baue eine KI-Beratungs- und Implementierungsagentur auf. Zielgruppe: kleine 
 **Überschrift (H1):** „KI-Lösungen für den Mittelstand"
 **Zwei Textboxen nebeneinander (ohne Zwischenüberschriften):**
 - Links: **„Weniger Routinearbeit. Mehr Zeit fürs Wesentliche."** + „Ich helfe kleinen und mittelständischen Unternehmen, zeitfressende Abläufe mit KI zu automatisieren – von der Angebotserstellung über die Kundenkommunikation bis zur Buchhaltung."
-- Rechts: **„Kein Fachchinesisch. Sondern Ergebnisse."** + „Ich finde heraus, wo in Ihrem Alltag Stunden für Routineaufgaben draufgehen – und baue Ihnen die passende Lösung. Persönlich, verständlich und zu fairen Festpreisen."
+- Rechts: **„Kein Fachchinesisch. Sondern Ergebnisse."** + „Ich finde heraus, wo in Ihrem Alltag Stunden für Routineaufgaben draufgehen – und baue Ihnen die passende Lösung. Persönlich, verständlich und zu fairen Preisen."
 **CTA-Button (orange):** „Jetzt Erstgespräch vereinbaren – kostenlos und unverbindlich" → Link zu TidyCal
 **Darunter:** Professionelles Portraitfoto
 
@@ -63,8 +63,8 @@ Ich verspreche Ihnen – kein Verkaufsgespräch, kein Foliendeck. Nur ein ehrlic
 *Kostenlos und unverbindlich* (orange)
 
 **Schritt 2: Analyse und Konzept**
-Ich schaue mir die Abläufe an, die wir im Erstgespräch besprochen haben, und prüfe, welche davon sich realistisch mit KI automatisieren lassen. Nicht alles, was technisch möglich ist, ergibt auch wirtschaftlich Sinn – und genau das filtere ich für Sie heraus. Sie erhalten ein klares Konzept mit konkreten Lösungsvorschlägen und einem verbindlichen Festpreis. Keine versteckten Kosten, keine offenen Stundenkontingente.
-*Transparenter Festpreis – Sie wissen vorher, was es kostet* (orange)
+Ich schaue mir die Abläufe an, die wir im Erstgespräch besprochen haben, und prüfe, welche davon sich realistisch mit KI automatisieren lassen. Nicht alles, was technisch möglich ist, ergibt auch wirtschaftlich Sinn – und genau das filtere ich für Sie heraus. Sie erhalten ein klares Konzept mit konkreten Lösungsvorschlägen und einem fairen Preis. Keine versteckten Kosten, keine offenen Stundenkontingente.
+*Fairer Preis – Sie wissen vorher, was es kostet* (orange)
 
 **Schritt 3: Umsetzung**
 Ich entwickle Ihre individuelle KI-Lösung – ob Automatisierung, Voice Agent, Dashboard oder ein komplett eigenständiges Tool. Dabei arbeite ich eng mit Ihnen zusammen: Sie bekommen regelmäßig Zwischenstände, können jederzeit Feedback geben und sehen schon früh erste Ergebnisse. Ihr Tagesgeschäft wird dabei nicht gestört – Sie müssen intern nichts umstellen und brauchen keine eigene IT-Abteilung.
@@ -111,7 +111,7 @@ Ich komme aus der Konzernwelt – und weiß deshalb, was dort gut läuft und was
 | Angebot | Wochen bis zum ersten Entwurf | Verbindliches Angebot innerhalb weniger Tage |
 | Ansprechpartner | Erst Sales, dann ein wechselndes Beraterteam | Direkt der Mensch, der auch umsetzt |
 | Sprache | Buzzwords und Fachchinesisch | Klar, verständlich, auf den Punkt |
-| Kosten | Offene Stundenkontingente | Transparente Festpreise – Sie wissen vorher, was es kostet |
+| Kosten | Offene Stundenkontingente | Faire Preise – Sie wissen vorher, was es kostet |
 | Ergebnis | Strategie-Decks und Empfehlungen | Funktionierende Lösungen in Ihrem Arbeitsalltag |
 
 **Design:** Linke Spalte grau/gedämpft, rechte Spalte (Valueate) mit orangem Header und leichtem orange Hintergrund. Mobile: Karten mit orangem linkem Rand, ✕ für große Beratungen, ✓ (orange) für Valueate.
