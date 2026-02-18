@@ -22,11 +22,12 @@ Valueate.de is a static marketing website for Bernd Weiler's AI consulting and i
 - `impressum.html` — Legal notice (fully implemented)
 - `datenschutz.html` — Privacy policy (fully implemented)
 - `css/style.css` — All styles, mobile-first with BEM naming convention
-- `js/main.js` — Vanilla JS in an IIFE: cookie banner, mobile nav, header scroll effect, Intersection Observer animations, smooth scrolling, calculator logic, contact form success/error messages
+- `js/main.js` — Vanilla JS (ES6, `const`/`let`) in an IIFE: cookie banner, mobile nav, header scroll effect, Intersection Observer animations, smooth scrolling, calculator logic, contact form success/error messages
 - `images/` — Static assets (logo.png for header, logo-footer.png for footer, portraits, 4 Storyset illustrations)
 - `images/logos/` — 15 partner/tool logos (SVG + 1 PNG) for the logo marquee on `leistungen.html`
-- `robots.txt` — Allows all crawlers, references sitemap
+- `robots.txt` — Explicit `Allow: /` for 15+ AI crawler user-agents (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, etc.) + wildcard `*`, references sitemap
 - `sitemap.xml` — All 6 pages with priority weights
+- `llms.txt` — Markdown summary for LLM discovery (llms.txt standard): business description, services, key pages
 
 Reference documents (not deployed):
 - `Valueate_Website_Uebergabe_v2.md` — Canonical source for all texts, design specs, and section structure
@@ -46,7 +47,7 @@ Only deploy these files — everything else stays local:
 public_html/
 ├── index.html, leistungen.html, kostenersparnis-rechner.html, kontakt.html, impressum.html, datenschutz.html
 ├── send-mail.php
-├── robots.txt, sitemap.xml
+├── robots.txt, sitemap.xml, llms.txt
 ├── css/style.css
 ├── js/main.js
 ├── images/ (all 8 image files)
@@ -111,6 +112,13 @@ Scrolling logo band between the last service block and the CTA section. Title: "
 
 ## Kostenersparnis-Rechner
 
+### Intro / Explanation Section
+Above the calculator widget, a `.calc-page__intro` block explains the two solution types:
+- **H2** "So funktioniert der Rechner" + intro paragraph
+- **Two cards** (`.calc-page__intro-cards`, 2-column grid on tablet+): KI-Sprachassistent (phone icon) and KI-Automatisierung (settings icon), each with description + orange price badge (`.calc-page__intro-price`)
+- **Instruction paragraph** (`.calc-page__intro-instruction`)
+
+### Calculator Widget
 Interactive calculator with real-time updates. Inputs:
 - **Art der Lösung**: Radio pills — KI-Sprachassistent (0,15 €/Min) or KI-Automatisierung (0,03 €/Ausführung)
 - **Aufwand pro Ausführung**: Range slider 1–60 Min
@@ -122,14 +130,15 @@ Formulas:
 - KI-Kosten/Jahr = Min × 0,15 × Häufigkeit × 12 (voice) OR 0,03 × Häufigkeit × 12 (automation)
 - Ersparnis = Differenz + Prozentwert
 
-## SEO
+## SEO and AI Discoverability
 
 - **Schema.org** (JSON-LD on `index.html`): `ProfessionalService` with full address (Biberach), geo coordinates, 11 `areaServed` entries (cities + states)
 - **Geo meta tags** on all indexed pages: `geo.region` (DE-BW), `geo.placename`, `geo.position`, `ICBM`
 - **OG tags** on `index.html`, `leistungen.html`, `kostenersparnis-rechner.html`, `kontakt.html`
 - **Meta robots**: `index, follow` on content pages; `noindex, follow` on legal pages
 - **Canonical URLs** on all indexed pages
-- `robots.txt` + `sitemap.xml` with priorities
+- `robots.txt` with explicit AI crawler allows (GPTBot, ClaudeBot, Google-Extended, PerplexityBot, etc.) + `sitemap.xml` with priorities
+- `llms.txt` at root — Markdown summary for LLM/AI discovery (business info, services, page index)
 - Footer shows "Standort: Biberach an der Riß — Für Unternehmen in ganz Süddeutschland" on every page
 
 ## CSS Design System
@@ -168,6 +177,7 @@ These rules apply to ALL German text on the site:
 - Icons: Lucide/Tabler/Phosphor (free SVG icon sets)
 - Show people, not technology in illustrations
 - Only ONE primary CTA type throughout (calendar booking via TidyCal)
+- **CTA pulse animation**: `.btn--lg` buttons have orange glow pulse (`btn-glow`), phone icon in circle (`btn__icon`) with ring pulse (`btn-pulse-ring`) and ringing animation (`btn-phone-ring`). `.contact__whatsapp` has green glow pulse (`btn-glow-green`). All animations pause on hover and respect `prefers-reduced-motion`.
 - No AI-generated photorealistic images (hurts credibility for an AI consulting site)
 
 ## External Services & Contact

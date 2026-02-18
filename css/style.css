@@ -117,8 +117,12 @@ h1, h2, h3, h4 {
 }
 
 .btn--lg {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
     font-size: 1.05rem;
     padding: 1rem 2.5rem;
+    animation: btn-glow 2s ease-in-out infinite;
 }
 
 .btn--sm {
@@ -136,6 +140,60 @@ h1, h2, h3, h4 {
     background: var(--bg-gray);
     color: var(--text-dark);
     border-color: var(--text-muted);
+}
+
+/* CTA Pulse + Phone Icon */
+.btn--lg:hover {
+    animation-play-state: paused;
+}
+
+.btn__icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
+}
+
+.btn__icon::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    animation: btn-pulse-ring 2s ease-in-out infinite;
+}
+
+.btn__icon svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2;
+    animation: btn-phone-ring 2s ease-in-out infinite;
+}
+
+@keyframes btn-glow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(230, 130, 31, 0.4); }
+    50% { box-shadow: 0 0 0 10px rgba(230, 130, 31, 0); }
+}
+
+@keyframes btn-pulse-ring {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.3); opacity: 0; }
+}
+
+@keyframes btn-phone-ring {
+    0%, 100% { transform: rotate(0deg); }
+    10% { transform: rotate(-12deg); }
+    20% { transform: rotate(12deg); }
+    30% { transform: rotate(-8deg); }
+    40% { transform: rotate(8deg); }
+    50%, 100% { transform: rotate(0deg); }
 }
 
 /* --- Cookie Banner --- */
@@ -413,10 +471,6 @@ h1, h2, h3, h4 {
     color: var(--text-body);
 }
 
-.services__card h3 {
-    color: var(--text-dark);
-}
-
 .services__card-img {
     max-width: 280px;
     margin: 0 auto 1.5rem;
@@ -446,13 +500,13 @@ h1, h2, h3, h4 {
 .services__card h3 {
     font-size: 1.25rem;
     margin-bottom: 0.75rem;
+    color: var(--text-dark);
 }
 
 .services__card p {
     color: var(--text-muted);
     font-size: 0.95rem;
 }
-
 
 /* --- Use Cases --- */
 .usecases {
@@ -1073,56 +1127,6 @@ h1, h2, h3, h4 {
 .fade-in-children.is-visible > *:nth-child(3) { transition-delay: 0.25s; }
 .fade-in-children.is-visible > *:nth-child(4) { transition-delay: 0.35s; }
 
-/* Skip to content (a11y) */
-.skip-link {
-    position: absolute;
-    top: -100%;
-    left: 1rem;
-    background: var(--orange);
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: var(--radius-sm);
-    z-index: 10001;
-}
-
-.skip-link:focus {
-    top: 0.5rem;
-}
-
-/* ==========================================================================
-   Work in Progress / Placeholder Page
-   ========================================================================== */
-.wip {
-    padding: calc(var(--header-height) + 5rem) 0 5rem;
-    background: var(--bg-gray);
-    text-align: center;
-    min-height: 70vh;
-    display: flex;
-    align-items: center;
-}
-
-.wip__icon {
-    margin-bottom: 2rem;
-}
-
-.wip__title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.wip__text {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    max-width: 520px;
-    margin: 0 auto 2.5rem;
-}
-
-@media (min-width: 768px) {
-    .wip__title {
-        font-size: 2.5rem;
-    }
-}
-
 /* ==========================================================================
    Legal Pages (Impressum, Datenschutz)
    ========================================================================== */
@@ -1162,14 +1166,6 @@ h1, h2, h3, h4 {
 
 .legal-page li {
     margin-bottom: 0.5rem;
-}
-
-.highlight-field {
-    background: #fff3e0;
-    padding: 0.15em 0.5em;
-    border-radius: 4px;
-    color: var(--orange);
-    font-weight: 600;
 }
 
 /* ==========================================================================
@@ -1219,14 +1215,6 @@ h1, h2, h3, h4 {
     width: 100%;
 }
 
-.leistungen__image--icon {
-    min-height: 240px;
-}
-
-.leistungen__image--icon svg {
-    opacity: 0.85;
-}
-
 .leistungen__title {
     font-size: 1.75rem;
     margin-bottom: 1rem;
@@ -1261,6 +1249,14 @@ h1, h2, h3, h4 {
     height: 10px;
     border-radius: 50%;
     background: var(--orange);
+}
+
+.leistungen__content .btn {
+    animation: btn-glow 2s ease-in-out infinite;
+}
+
+.leistungen__content .btn:hover {
+    animation-play-state: paused;
 }
 
 @media (min-width: 768px) {
@@ -1401,6 +1397,17 @@ h1, h2, h3, h4 {
         -webkit-mask-image: none;
         mask-image: none;
     }
+
+    .btn--lg,
+    .contact__whatsapp,
+    .leistungen__content .btn {
+        animation: none;
+    }
+
+    .btn__icon::before,
+    .btn__icon svg {
+        animation: none;
+    }
 }
 
 @media (min-width: 768px) {
@@ -1451,6 +1458,79 @@ h1, h2, h3, h4 {
     color: var(--text-muted);
     font-size: 1.1rem;
     margin-bottom: 2.5rem;
+}
+
+/* Calculator Intro / Explanation */
+.calc-page__intro {
+    max-width: 960px;
+    margin: 0 auto 2.5rem;
+}
+
+.calc-page__intro-title {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.calc-page__intro-text {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1rem;
+    max-width: 750px;
+    margin: 0 auto 2rem;
+}
+
+.calc-page__intro-cards {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.calc-page__intro-card {
+    background: var(--bg-white);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+}
+
+.calc-page__intro-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    flex: 1;
+}
+
+.calc-page__intro-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.calc-page__intro-card-header svg {
+    flex-shrink: 0;
+    color: var(--orange);
+}
+
+.calc-page__intro-card-header h3 {
+    font-size: 1.15rem;
+}
+
+.calc-page__intro-price {
+    display: inline-block;
+    color: var(--orange);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.calc-page__intro-instruction {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    max-width: 750px;
+    margin: 0 auto;
 }
 
 .calc {
@@ -1721,6 +1801,14 @@ h1, h2, h3, h4 {
     .calc__result-value {
         font-size: 2rem;
     }
+
+    .calc-page__intro-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .calc-page__intro-title {
+        font-size: 1.75rem;
+    }
 }
 
 /* --- Calculator Responsive – Desktop (1024px+) --- */
@@ -1949,6 +2037,7 @@ a.contact__info-value:hover {
     text-align: center;
     justify-content: center;
     margin-top: 0.5rem;
+    animation: btn-glow-green 2s ease-in-out infinite;
 }
 
 .contact__whatsapp:hover {
@@ -1956,6 +2045,12 @@ a.contact__info-value:hover {
     color: #fff;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+    animation-play-state: paused;
+}
+
+@keyframes btn-glow-green {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+    50% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
 }
 
 .contact__whatsapp svg {

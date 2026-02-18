@@ -1,0 +1,37 @@
+# Valueate – KI-Beratung und Automatisierung fuer den Mittelstand
+
+> Valueate ist ein KI-Beratungs- und Implementierungsunternehmen von Bernd Weiler
+> mit Sitz in Biberach an der Riss (Baden-Wuerttemberg, Deutschland).
+> Zielgruppe: kleine und mittelstaendische Unternehmen (KMU) in Sueddeutschland.
+> Leistungen: KI-Analyse und Strategie, KI-Automatisierung, Implementierung und
+> Schulung, Website-Erstellung. Transparente Festpreise, persoenliche Betreuung,
+> kein Fachchinesisch.
+> Kontakt: kontakt@valueate.de | Telefon: +49 152 06237493
+> Standort: Birkenharder Str. 10, 88400 Biberach an der Riss
+> Website: https://www.valueate.de
+
+Valueate richtet sich an Unternehmer und Geschaeftsfuehrer von KMU, die
+zeitfressende Routineaufgaben mit KI automatisieren moechten – ohne eigene
+IT-Abteilung und ohne grosse Budgets. Der Gruender Bernd Weiler bringt 17 Jahre
+Konzernerfahrung im Stahlgrosshandel mit (u.a. Umsatzverantwortung ueber 300 Mio.
+Euro/Jahr) und setzt heute pragmatische KI-Loesungen fuer den Mittelstand um.
+
+Kernunterscheidung gegenueber grossen Beratungshaeusern: transparente Festpreise,
+direkter Kontakt zum Umsetzer (kein wechselndes Beraterteam), verstaendliche
+Sprache, auch kleinere Projekte willkommen. Kostenloses Erstgespraech (30 Min.)
+ueber TidyCal buchbar.
+
+Serviceregion: Biberach, Ulm, Neu-Ulm, Augsburg, Ravensburg, Friedrichshafen,
+Konstanz, Stuttgart, Muenchen – ganz Baden-Wuerttemberg und Bayern.
+
+## Hauptseiten
+
+- [Startseite](https://www.valueate.de/index.html): Ueberblick ueber Leistungen, Arbeitsprozess in vier Schritten, Ueber mich, Vergleich mit grossen Beratungen, Kontaktmoeglichkeiten
+- [Leistungen](https://www.valueate.de/leistungen.html): Detaillierte Beschreibung der vier Leistungsbereiche – Analyse und Strategie, KI-Automatisierung, Implementierung und Schulung, Website-Erstellung
+- [Kostenersparnis-Rechner](https://www.valueate.de/kostenersparnis-rechner.html): Interaktiver Rechner zur Berechnung des Einsparpotenzials durch KI-Automatisierung (KI-Sprachassistent oder KI-Automatisierung)
+- [Kontakt](https://www.valueate.de/kontakt.html): Kontaktformular, Telefon, E-Mail, WhatsApp, Terminbuchung fuer kostenloses Erstgespraech
+
+## Optional
+
+- [Impressum](https://www.valueate.de/impressum.html): Rechtliche Pflichtangaben
+- [Datenschutz](https://www.valueate.de/datenschutz.html): Datenschutzerklaerung

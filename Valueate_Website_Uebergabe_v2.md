@@ -138,13 +138,15 @@ Telefon: +49 152 06237493
 1. **Analyse und Strategie** – Storyset-Illustration (`illustration-analyse.png`), Fokus auf Prozessanalyse, KI-Potenzial, Roadmap, Aufwandsschätzung
 2. **KI-Automatisierung** – Storyset-Illustration (`illustration-automatisierung.png`), Fokus auf Sprachassistenten, Dokumentenverarbeitung, Workflow-Automatisierung, Systemanbindung
 3. **Implementierung und Schulung** – Storyset-Illustration (`illustration-schulung.png`), Fokus auf Installation, Team-Schulung, Support, Anpassungen
-4. **Website-Erstellung** – Storyset-Illustration (`illustration-website.png`), professionelle Website für KMU, responsives Design, SEO, schnelle Ladezeiten, Übergabe mit Einweisung
+4. **Website-Erstellung** – Storyset-Illustration (`illustration-website.png`), professionelle Website für KMU, responsives Design, SEO und GEO (Generative Engine Optimization), Sichtbarkeit im KI-Zeitalter (ChatGPT, Gemini und Co.), schnelle Ladezeiten, Übergabe mit Einweisung
 
 **Logo-Marquee Trust-Band** ✅ UMGESETZT (17.02.2026)
 Scrollendes Logo-Band zwischen letztem Leistungsblock und Abschluss-CTA. Überschrift: „Wir arbeiten mit Produkten von". 15 verlinkte Logos (OpenAI, Anthropic, Google, Mistral AI, IONOS, Perplexity, Meta, Apple, Microsoft, AWS, GitHub, Hostinger, Midjourney, Black Forest Labs, ElevenLabs). Reine CSS-Animation, Grayscale-Filter mit Farbe bei Hover, Fade-Ränder, Pause bei Hover, Reduced-Motion-Fallback. Logo-Dateien in `images/logos/` (14 SVG + 1 PNG).
 
 ### Kostenersparnis-Rechner ✅ UMGESETZT
 `kostenersparnis-rechner.html` – Interaktiver Rechner mit Echtzeit-Berechnung der KI-Kostenersparnis.
+
+**Erklärungsbereich oberhalb des Rechners** (18.02.2026): H2 „So funktioniert der Rechner" mit Einleitungstext, zwei Erklärungs-Karten (KI-Sprachassistent mit Telefon-Icon + KI-Automatisierung mit Zahnrad-Icon, jeweils mit Beschreibung und orangener Kosten-Badge), Abschluss-Absatz mit Bedienhinweis. Karten nebeneinander ab Tablet (768px), untereinander auf Mobile.
 
 ### Impressum ✅ UMGESETZT
 `impressum.html` – Vollständig, noindex.
@@ -157,10 +159,11 @@ Scrollendes Logo-Band zwischen letztem Leistungsblock und Abschluss-CTA. Übersc
 
 ---
 
-## SEO und Technik ✅ UMGESETZT
+## SEO, GEO und Technik ✅ UMGESETZT
 
-- `robots.txt` – erlaubt alle Crawler, verweist auf Sitemap
-- `sitemap.xml` – alle 5 Seiten mit Prioritäten
+- `robots.txt` – Explizites `Allow: /` für 15+ KI-Crawler-User-Agents (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, Applebot-Extended, meta-externalagent, etc.) + Wildcard `*`, verweist auf Sitemap
+- `llms.txt` – Markdown-Zusammenfassung nach llms.txt-Standard für KI-Modell-Discovery (Geschäftsbeschreibung, Leistungen, Seitenindex)
+- `sitemap.xml` – alle 6 Seiten mit Prioritäten
 - Meta-Tags: `index, follow` auf allen Inhaltsseiten, `noindex, follow` auf Legal-Seiten
 - Canonical-URLs auf allen Seiten
 - Strukturierte Daten (Schema.org ProfessionalService) auf der Startseite
@@ -254,10 +257,13 @@ public_html/
 ├── index.html
 ├── leistungen.html
 ├── kostenersparnis-rechner.html
+├── kontakt.html
 ├── impressum.html
 ├── datenschutz.html
+├── send-mail.php
 ├── robots.txt
 ├── sitemap.xml
+├── llms.txt
 ├── css/
 │   └── style.css
 ├── js/
@@ -278,7 +284,7 @@ public_html/
         └── bfl.png
 ```
 
-**NICHT hochladen:** `.git/`, `.claude/`, `.cursor/`, `.gitignore`, `.DS_Store`, `CLAUDE.md`, `Valueate_Website_Uebergabe_v2.md`, `Website-Analyse_KI-Agentur.md`
+**NICHT hochladen:** `.git/`, `.claude/`, `.cursor/`, `.gitignore`, `.DS_Store`, `CLAUDE.md`, `*.md` Referenzdokumente
 
 ---
 
@@ -312,3 +318,11 @@ public_html/
 - [x] **„Voice Agent" → „KI-Sprachassistent"** – Sprachrichtlinie korrigiert
 - [x] **CTA-Texte angeglichen** – Leistungsseite an Startseite angepasst
 - [x] **Sitemap lastmod** aktualisiert
+
+### Erledigt (18.02.2026)
+- [x] **Pulsierende CTA-Buttons mit Telefon-Icon** – `.btn--lg` Buttons mit orangem Glow-Puls, klingelndem Telefon-Icon im Kreis mit Puls-Ring. WhatsApp-Button mit grünem Glow-Puls. Hover pausiert Animation. `prefers-reduced-motion` deaktiviert alles.
+- [x] **robots.txt für KI-Crawler optimiert** – Explizites `Allow: /` für 15+ AI-Crawler (GPTBot, ClaudeBot, Google-Extended, PerplexityBot, Applebot-Extended, meta-externalagent, etc.)
+- [x] **llms.txt erstellt** – Markdown-Zusammenfassung nach llms.txt-Standard für KI-Modell-Discovery
+- [x] **Website-Erstellung mit GEO erweitert** – Leistungsblock 4 um Generative Engine Optimization und KI-Sichtbarkeit ergänzt
+- [x] **Erklärungstext oberhalb des Kostenrechners** – Zwei Karten (KI-Sprachassistent / KI-Automatisierung) mit Icons und Kosten-Badges erklären die Lösungstypen vor dem Rechner-Widget
+- [x] **Code-Cleanup** – Toter CSS-Code entfernt (`.wip`, `.skip-link`, `.highlight-field`, `.leistungen__image--icon`, doppelte Regeln), JS modernisiert (`var` → `const`/`let`, `pageYOffset` → `scrollY`, ungenutzten `lastScroll` entfernt), redundantes `hidden`-Attribut auf Kontaktseite bereinigt
