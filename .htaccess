@@ -1,0 +1,4 @@
+# Block access to markdown reference docs and config files
+<FilesMatch "\.(md|gitignore)$">
+    Require all denied
+</FilesMatch>

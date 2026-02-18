@@ -29,7 +29,7 @@ Valueate.de is a static marketing website for Bernd Weiler's AI consulting and i
 - `sitemap.xml` — All 6 pages with priority weights
 - `llms.txt` — Markdown summary for LLM discovery (llms.txt standard): business description, services, key pages
 
-Reference documents (not deployed):
+Reference documents (deployed but blocked via `.htaccess`):
 - `Valueate_Website_Uebergabe_v2.md` — Canonical source for all texts, design specs, and section structure
 - `Website-Analyse_KI-Agentur.md` — Competitor analysis with recommendations
 
@@ -40,11 +40,15 @@ Reference documents (not deployed):
 - **Hosting**: Hostinger (static files in `public_html/`)
 - **Internal links**: Use `href="index.html"` (not `href="/"`), so pages work when opened locally as files
 
-### Upload to Hostinger
+### Deployment
 
-Only deploy these files — everything else stays local:
+**Automatic deployment** via GitHub → Hostinger (Git auto-deploy from `main` branch). All files in the repo are deployed to `public_html/`.
+
+`.htaccess` blocks HTTP access to sensitive files (`.md`, `.gitignore`) — they exist on the server but return 403 Forbidden.
+
 ```
 public_html/
+├── .htaccess (blocks .md and .gitignore access)
 ├── index.html, leistungen.html, kostenersparnis-rechner.html, kontakt.html, impressum.html, datenschutz.html
 ├── send-mail.php
 ├── robots.txt, sitemap.xml, llms.txt
@@ -54,7 +58,7 @@ public_html/
 └── images/logos/ (15 logo files for marquee)
 ```
 
-**DO NOT upload:** `.git/`, `.claude/`, `.cursor/`, `.gitignore`, `.DS_Store`, `CLAUDE.md`, `*.md` reference docs
+**NOT in repo (excluded via `.gitignore`):** `.claude/`, `.cursor/`, `.DS_Store`
 
 ## Development
 
@@ -205,6 +209,29 @@ These rules apply to ALL German text on the site:
 - **Branch-specific pages** (Handwerk, Gastronomie, E-Commerce, Dienstleistungen, Gesundheitswesen)
 - **City-specific landing pages** (e.g., ki-beratung-ulm.html) for stronger local SEO
 - **Lead magnet** (e.g., "KI-Checkliste" PDF download)
+
+## GEO-Optimierung (Generative Engine Optimization) — TODO
+
+### Priorität 1 — Hoher Impact, zuerst umsetzen
+- [ ] **FAQPage Schema + sichtbare FAQ-Inhalte** — 5–10 Fragen auf `index.html` und `leistungen.html` mit JSON-LD FAQPage-Markup (3,2x häufiger in AI Overviews zitiert)
+- [ ] **Service Schema mit Preisen** auf `leistungen.html` — Einzelne `Service`-Objekte mit `Offer`/`priceSpecification` für jede Leistung (direkt verwertbar für KI-Anfragen wie "Was kostet KI-Beratung für KMU?")
+- [ ] **Person Schema erweitern** — `jobTitle`, `knowsAbout`, `description`, `sameAs` zum bestehenden `founder`-Objekt in `index.html` hinzufügen (E-E-A-T Signale)
+- [ ] **Content als Self-Contained Units** — Jeder H2/H3-Abschnitt als eigenständige, zitierbare Einheit (120–180 Wörter). KI extrahiert Passagen, keine ganzen Seiten.
+- [ ] **Frage-basierte H2-Überschriften** (selektiv) — z.B. "Wie läuft eine KI-Beratung ab?" statt "Vier Schritte" (bis zu 7x mehr Citations für kleinere Domains)
+
+### Priorität 2 — Bald umsetzen
+- [ ] **llms-full.txt erstellen** — Kompletter Content inline (nicht nur Links), für kleine Sites besonders sinnvoll
+- [ ] **datePublished / dateModified** in Schema + sichtbar auf Seiten — Content < 3 Monate bekommt ~doppelt so viele Citations
+- [ ] **Speakable Schema** — Identifiziert TTS-geeignete Abschnitte für Sprachassistenten (62% Voice-Suchen 2026)
+- [ ] **Google Business Profile einrichten** — Primäre Datenquelle für lokale KI-Suchen ("KI-Berater Biberach")
+- [ ] **Quellenangaben in Texten** — "Laut McKinsey (2025)..." erhöht Zitierwahrscheinlichkeit um 30–40%
+
+### Priorität 3 — Langfristige Sichtbarkeit
+- [ ] **Eigenständige FAQ-Seite** — 15–25 Fragen in Clustern (Kosten, Ablauf, Technik, Branchen, Datenschutz)
+- [ ] **Off-Site Brand Mentions** — Gastartikel (t3n, Gründerszene), IHK-Eintrag, LinkedIn-Sichtbarkeit (Brand Mentions 3x stärker als Backlinks für KI)
+- [ ] **First-Paragraph Answer Pattern** — Erste 60 Wörter jeder Seite als direkte Antwort (+35% Citation-Boost)
+- [ ] **Bild-Alt-Texte anreichern** — Beschreibende, kontextreiche Alt-Texte statt generischer Beschreibungen
+- [ ] **Vierteljährliche Content-Aktualisierung** — Datum, Statistiken, Beispiele regelmäßig auffrischen
 
 ## Key Competitor Insight
 

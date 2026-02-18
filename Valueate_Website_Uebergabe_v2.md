@@ -244,16 +244,18 @@ Scrollendes Logo-Band zwischen letztem Leistungsblock und Abschluss-CTA. Übersc
 
 ---
 
-## Hosting ✅ ENTSCHIEDEN
+## Hosting und Deployment ✅ ENTSCHIEDEN
 - **Anbieter:** Hostinger
-- **Upload:** Statische Dateien direkt in `public_html/`
 - **Domain:** www.valueate.de
+- **Deployment:** Automatisch via GitHub → Hostinger (Git auto-deploy von `main` Branch)
+- **Zugriffsschutz:** `.htaccess` blockiert HTTP-Zugriff auf `.md`-Dateien und `.gitignore` (403 Forbidden)
 
-### Upload-Struktur für Hostinger
+### Dateistruktur auf dem Server
 
-Nur diese Dateien hochladen:
+Alle Dateien im Repository werden automatisch nach `public_html/` deployed. Sensible Dateien sind per `.htaccess` geschützt:
 ```
 public_html/
+├── .htaccess (blockiert .md und .gitignore Zugriff)
 ├── index.html
 ├── leistungen.html
 ├── kostenersparnis-rechner.html
@@ -284,7 +286,7 @@ public_html/
         └── bfl.png
 ```
 
-**NICHT hochladen:** `.git/`, `.claude/`, `.cursor/`, `.gitignore`, `.DS_Store`, `CLAUDE.md`, `*.md` Referenzdokumente
+**NICHT im Repository (via `.gitignore`):** `.claude/`, `.cursor/`, `.DS_Store`
 
 ---
 
