@@ -227,17 +227,18 @@ These rules apply to ALL German text on the site:
 - **LinkedIn**: linkedin.com/in/berndweiler
 - **Address**: Birkenharder Str. 10, 88400 Biberach an der Riß
 - **Fonts**: Google Fonts CDN (DM Sans, Playfair Display)
+- **Google Ads**: Gutschein-Aktion aktiv — 400 € Guthaben bei 400 € Ausgaben (Code: `4XPTN-XYKND-PRVN`). Eingelöst am 19.02.2026, Anforderungen erfüllen bis **20.04.2026**. Nach Erhalt des Guthabens: innerhalb von 60 Tagen aufbrauchen.
 
 ## Planned / Missing Content
 
 ### High Priority
 - **Transparent price ranges** on `leistungen.html` (key differentiator — no competitor shows prices)
-- **Google Search Console** — Verifizierung via `google1887c5edf8ff7bdb.html` eingerichtet, Sitemap einreichen
+- **Google Search Console** — Verifizierung via `google1887c5edf8ff7bdb.html` eingerichtet, Sitemap eingereicht, `index.html` ist indexiert. **TODO (ab ~22.02.2026):** Indexierung für Unterseiten beantragen (leistungen.html, kontakt.html, kostenersparnis-rechner.html)
 
 ### Medium Priority
 - **FAQ section** — Häufige Fragen von KMU-Kunden
 - **Vertrauenssignale section** (Section 6 on homepage) — testimonials, pilot project results (when available)
-- **Google Business Profile** einrichten (local SEO)
+- ~~**Google Business Profile** einrichten (local SEO)~~ ✅ Eingerichtet mit Logo (19.02.2026). Knowledge Panel dauert ca. 2–4 Wochen.
 
 ### Low Priority (Content-Marketing / Scale)
 - **Blog** with practical SME-focused articles (SEO content)
