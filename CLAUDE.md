@@ -23,7 +23,7 @@ Valueate.de is a static marketing website for Bernd Weiler's AI consulting and i
 - `datenschutz.html` — Privacy policy (fully implemented)
 - `css/style.css` — All styles, mobile-first with BEM naming convention
 - `js/main.js` — Vanilla JS (ES6, `const`/`let`) in an IIFE: cookie banner, mobile nav, header scroll effect, Intersection Observer animations, smooth scrolling, calculator logic, contact form success/error messages
-- `images/` — Static assets (logo.png for header, logo-footer.png for footer, portraits, 4 Storyset illustrations)
+- `images/` — Static assets (logo.png for header, logo-footer.png for footer, portraits, 4 Storyset illustrations, favicon files)
 - `images/logos/` — 15 partner/tool logos (SVG + 1 PNG) for the logo marquee on `leistungen.html`
 - `robots.txt` — Explicit `Allow: /` for 15+ AI crawler user-agents (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, etc.) + wildcard `*`, references sitemap
 - `sitemap.xml` — All 6 pages with priority weights
@@ -54,8 +54,9 @@ public_html/
 ├── robots.txt, sitemap.xml, llms.txt
 ├── css/style.css
 ├── js/main.js
-├── images/ (all 8 image files)
-└── images/logos/ (15 logo files for marquee)
+├── images/ (all image files + favicon.svg, favicon-32x32.png, apple-touch-icon.png)
+├── images/logos/ (15 logo files for marquee)
+└── google1887c5edf8ff7bdb.html (Google Search Console Verifizierung)
 ```
 
 **NOT in repo (excluded via `.gitignore`):** `.claude/`, `.cursor/`, `.DS_Store`
@@ -78,6 +79,29 @@ All pages have a fixed dark banner (`#1A1A1A`) directly below the header that pl
 - **Animation**: JS `setInterval` (2.5s) swaps the prefix text with a fade-up transition (0.4s). The suffix "ate" stays fixed in orange, the prefix is right-aligned (`width: 4.5em; text-align: right`) so "ate" never moves.
 - **Accessibility**: `prefers-reduced-motion` disables the rotation (stays on "Valueate"). `aria-label` lists all words.
 - **Layout impact**: All page sections with `--header-height`-based padding include `+ var(--banner-height)`. Mobile nav overlay `top` also adjusted.
+
+## Favicon
+
+3D-V-Checkmark aus dem Valueate-Logo (dunkler linker Arm, metallisch-graue innere Fläche, orange äußere Fläche). Die PNGs sind direkt aus `images/logo.png` extrahiert (kein manuelles SVG-Nachbauen), das SVG bettet das PNG als Base64 ein, um den Metallic-Effekt zu erhalten.
+
+- `images/favicon.svg` — SVG mit eingebettetem PNG (Base64), für moderne Browser
+- `images/favicon-32x32.png` — 32×32 PNG-Fallback für ältere Browser
+- `images/apple-touch-icon.png` — 180×180 PNG mit weißem Hintergrund für iOS Home-Screen
+
+All 6 HTML pages include the favicon `<link>` tags after `<meta name="viewport">`.
+
+## Title Tag Schema
+
+Brand-first format: **"Valueate – [Seitenname] | Bernd Weiler"**
+
+| Page | Title |
+|------|-------|
+| `index.html` | Valueate – KI-Systeme für KMU \| Bernd Weiler |
+| `leistungen.html` | Valueate – Leistungen \| Bernd Weiler |
+| `kontakt.html` | Valueate – Kontakt \| Bernd Weiler |
+| `kostenersparnis-rechner.html` | Valueate – Kostenersparnis-Rechner \| Bernd Weiler |
+| `impressum.html` | Valueate – Impressum \| Bernd Weiler |
+| `datenschutz.html` | Valueate – Datenschutz \| Bernd Weiler |
 
 ## Navigation Structure
 
@@ -208,7 +232,7 @@ These rules apply to ALL German text on the site:
 
 ### High Priority
 - **Transparent price ranges** on `leistungen.html` (key differentiator — no competitor shows prices)
-- **Google Search Console** einrichten und Sitemap einreichen
+- **Google Search Console** — Verifizierung via `google1887c5edf8ff7bdb.html` eingerichtet, Sitemap einreichen
 
 ### Medium Priority
 - **FAQ section** — Häufige Fragen von KMU-Kunden
