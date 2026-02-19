@@ -29,6 +29,7 @@
     --transition: 0.3s ease;
     --max-width: 1200px;
     --header-height: 80px;
+    --banner-height: 48px;
 }
 
 html {
@@ -351,7 +352,7 @@ h1, h2, h3, h4 {
 /* Mobile Nav */
 .mobile-nav {
     position: fixed;
-    top: var(--header-height);
+    top: calc(var(--header-height) + var(--banner-height));
     left: 0;
     right: 0;
     bottom: 0;
@@ -393,9 +394,52 @@ h1, h2, h3, h4 {
     color: var(--orange);
 }
 
+/* --- Wordplay Banner --- */
+.wordplay-banner {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    height: var(--banner-height);
+    background: var(--text-dark);
+    z-index: 998;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.wordplay-banner__inner {
+    display: inline-flex;
+    align-items: baseline;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.wordplay-banner__prefix {
+    display: inline-block;
+    width: 4.5em;
+    text-align: right;
+    color: #fff;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.wordplay-banner__prefix.is-fading {
+    opacity: 0;
+    transform: translateY(-8px);
+}
+
+.wordplay-banner__suffix {
+    color: var(--orange);
+}
+
 /* --- Hero --- */
 .hero {
-    padding: calc(var(--header-height) + 3rem) 0 3rem;
+    padding: calc(var(--header-height) + var(--banner-height) + 3rem) 0 3rem;
     background: var(--bg-white);
 }
 
@@ -974,7 +1018,7 @@ h1, h2, h3, h4 {
     }
 
     .hero {
-        padding: calc(var(--header-height) + 4rem) 0 4rem;
+        padding: calc(var(--header-height) + var(--banner-height) + 4rem) 0 4rem;
     }
 
     .hero__title {
@@ -1036,7 +1080,7 @@ h1, h2, h3, h4 {
     }
 
     .hero {
-        padding: calc(var(--header-height) + 5rem) 0 4rem;
+        padding: calc(var(--header-height) + var(--banner-height) + 5rem) 0 4rem;
     }
 
     .hero__title {
@@ -1131,7 +1175,7 @@ h1, h2, h3, h4 {
    Legal Pages (Impressum, Datenschutz)
    ========================================================================== */
 .legal-page {
-    padding: calc(var(--header-height) + 4rem) 0 5rem;
+    padding: calc(var(--header-height) + var(--banner-height) + 4rem) 0 5rem;
     max-width: 800px;
     margin: 0 auto;
 }
@@ -1172,7 +1216,7 @@ h1, h2, h3, h4 {
    Leistungen Detail Page
    ========================================================================== */
 .leistungen-hero {
-    padding: calc(var(--header-height) + 3rem) 0 3rem;
+    padding: calc(var(--header-height) + var(--banner-height) + 3rem) 0 3rem;
     background: var(--bg-gray);
     text-align: center;
 }
@@ -1261,7 +1305,7 @@ h1, h2, h3, h4 {
 
 @media (min-width: 768px) {
     .leistungen-hero {
-        padding: calc(var(--header-height) + 4rem) 0 3.5rem;
+        padding: calc(var(--header-height) + var(--banner-height) + 4rem) 0 3.5rem;
     }
 
     .leistungen-hero__title {
@@ -1297,7 +1341,7 @@ h1, h2, h3, h4 {
 
 @media (min-width: 1024px) {
     .leistungen-hero {
-        padding: calc(var(--header-height) + 5rem) 0 4rem;
+        padding: calc(var(--header-height) + var(--banner-height) + 5rem) 0 4rem;
     }
 
     .leistungen-hero__title {
@@ -1408,6 +1452,10 @@ h1, h2, h3, h4 {
     .btn__icon svg {
         animation: none;
     }
+
+    .wordplay-banner__prefix {
+        transition: none;
+    }
 }
 
 @media (min-width: 768px) {
@@ -1443,7 +1491,7 @@ h1, h2, h3, h4 {
    Calculator Page
    ========================================================================== */
 .calc-page {
-    padding: calc(var(--header-height) + 3rem) 0 2rem;
+    padding: calc(var(--header-height) + var(--banner-height) + 3rem) 0 2rem;
     background: var(--bg-gray);
 }
 
@@ -1778,7 +1826,7 @@ h1, h2, h3, h4 {
 /* --- Calculator Responsive – Tablet (768px+) --- */
 @media (min-width: 768px) {
     .calc-page {
-        padding: calc(var(--header-height) + 4rem) 0 2.5rem;
+        padding: calc(var(--header-height) + var(--banner-height) + 4rem) 0 2.5rem;
     }
 
     .calc-page__title {
@@ -1814,7 +1862,7 @@ h1, h2, h3, h4 {
 /* --- Calculator Responsive – Desktop (1024px+) --- */
 @media (min-width: 1024px) {
     .calc-page {
-        padding: calc(var(--header-height) + 5rem) 0 3rem;
+        padding: calc(var(--header-height) + var(--banner-height) + 5rem) 0 3rem;
     }
 
     .calc-page__title {
@@ -1834,7 +1882,7 @@ h1, h2, h3, h4 {
    Contact Page
    ========================================================================== */
 .contact-page {
-    padding: calc(var(--header-height) + 2rem) 0 1.5rem;
+    padding: calc(var(--header-height) + var(--banner-height) + 2rem) 0 1.5rem;
     background: var(--bg-gray);
     text-align: center;
 }
@@ -2074,7 +2122,7 @@ a.contact__info-value:hover {
 /* --- Contact Responsive – Tablet (768px+) --- */
 @media (min-width: 768px) {
     .contact-page {
-        padding: calc(var(--header-height) + 2.5rem) 0 1.5rem;
+        padding: calc(var(--header-height) + var(--banner-height) + 2.5rem) 0 1.5rem;
     }
 
     .contact-page__title {
@@ -2090,7 +2138,7 @@ a.contact__info-value:hover {
 /* --- Contact Responsive – Desktop (1024px+) --- */
 @media (min-width: 1024px) {
     .contact-page {
-        padding: calc(var(--header-height) + 3rem) 0 1.5rem;
+        padding: calc(var(--header-height) + var(--banner-height) + 3rem) 0 1.5rem;
     }
 
     .contact-page__title {

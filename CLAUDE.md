@@ -68,6 +68,17 @@ No build step. Serve with any static server:
 python3 -m http.server 8000
 ```
 
+## Wordplay Banner (Eye-Catcher)
+
+All pages have a fixed dark banner (`#1A1A1A`) directly below the header that plays on the brand name "Valueate" and the "-ate" suffix. It rotates through: **Value**ate → **Cre**ate → **Innov**ate → **Integr**ate → **Valid**ate → **Acceler**ate.
+
+- **BEM namespace**: `.wordplay-banner`, `.wordplay-banner__inner`, `.wordplay-banner__prefix`, `.wordplay-banner__suffix`
+- **Position**: Fixed, `top: var(--header-height)`, `z-index: 998`
+- **Height**: `--banner-height: 48px` (CSS variable in `:root`)
+- **Animation**: JS `setInterval` (2.5s) swaps the prefix text with a fade-up transition (0.4s). The suffix "ate" stays fixed in orange, the prefix is right-aligned (`width: 4.5em; text-align: right`) so "ate" never moves.
+- **Accessibility**: `prefers-reduced-motion` disables the rotation (stays on "Valueate"). `aria-label` lists all words.
+- **Layout impact**: All page sections with `--header-height`-based padding include `+ var(--banner-height)`. Mobile nav overlay `top` also adjusted.
+
 ## Navigation Structure
 
 All pages share the same header/footer. Current nav items:

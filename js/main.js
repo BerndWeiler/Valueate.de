@@ -93,6 +93,27 @@
         });
     }
 
+    // --- Wordplay Banner Rotation ---
+    var wordplayPrefix = document.getElementById('wordplay-prefix');
+
+    if (wordplayPrefix) {
+        var prefixes = ['Value', 'Cre', 'Innov', 'Integr', 'Valid', 'Acceler'];
+        var currentWordIndex = 0;
+        var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!reducedMotion) {
+            setInterval(function () {
+                wordplayPrefix.classList.add('is-fading');
+
+                setTimeout(function () {
+                    currentWordIndex = (currentWordIndex + 1) % prefixes.length;
+                    wordplayPrefix.textContent = prefixes[currentWordIndex];
+                    wordplayPrefix.classList.remove('is-fading');
+                }, 400);
+            }, 2500);
+        }
+    }
+
     // --- Smooth scroll for anchor links ---
     document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
         anchor.addEventListener('click', function (e) {

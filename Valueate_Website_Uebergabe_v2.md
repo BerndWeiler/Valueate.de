@@ -328,3 +328,6 @@ public_html/
 - [x] **Website-Erstellung mit GEO erweitert** – Leistungsblock 4 um Generative Engine Optimization und KI-Sichtbarkeit ergänzt
 - [x] **Erklärungstext oberhalb des Kostenrechners** – Zwei Karten (KI-Sprachassistent / KI-Automatisierung) mit Icons und Kosten-Badges erklären die Lösungstypen vor dem Rechner-Widget
 - [x] **Code-Cleanup** – Toter CSS-Code entfernt (`.wip`, `.skip-link`, `.highlight-field`, `.leistungen__image--icon`, doppelte Regeln), JS modernisiert (`var` → `const`/`let`, `pageYOffset` → `scrollY`, ungenutzten `lastScroll` entfernt), redundantes `hidden`-Attribut auf Kontaktseite bereinigt
+
+### Erledigt (19.02.2026)
+- [x] **Wordplay-Banner (Eye-Catcher)** – Schmaler, dunkler Banner (`#1A1A1A`) fixiert direkt unter dem Header auf allen 6 Seiten. Spielt mit dem Markennamen: Value**ate** → Cre**ate** → Innov**ate** → Integr**ate** → Valid**ate** → Acceler**ate**. Suffix „ate" bleibt in Orange an fester Position, Prefix rotiert per JS alle 2,5 Sek. mit Fade-Up-Animation. CSS-Variable `--banner-height: 48px`, Prefix rechtsbündig mit fester Breite. `prefers-reduced-motion` deaktiviert Rotation.
