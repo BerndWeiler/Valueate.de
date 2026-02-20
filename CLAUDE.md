@@ -24,6 +24,7 @@ Valueate.de is a static marketing website for Bernd Weiler's AI consulting and i
 - `css/style.css` — All styles, mobile-first with BEM naming convention
 - `js/main.js` — Vanilla JS (ES6, `const`/`let`) in an IIFE: cookie banner, mobile nav, header scroll effect, Intersection Observer animations, smooth scrolling, calculator logic, contact form success/error messages
 - `images/` — Static assets (logo.png for header, logo-footer.png for footer, portraits, 4 Storyset illustrations, favicon files)
+- `images/email/` — Email signature assets (animated logo GIF, static logo PNG, 5 contact icons in brand orange)
 - `images/logos/` — 15 partner/tool logos (SVG + 1 PNG) for the logo marquee on `leistungen.html`
 - `robots.txt` — Explicit `Allow: /` for 15+ AI crawler user-agents (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, etc.) + wildcard `*`, references sitemap
 - `sitemap.xml` — All 6 pages with priority weights
@@ -55,6 +56,7 @@ public_html/
 ├── css/style.css
 ├── js/main.js
 ├── images/ (all image files + favicon.svg, favicon-32x32.png, apple-touch-icon.png)
+├── images/email/ (logo-email-animated.gif, logo-email.png, 5 icon-*.png for email signature)
 ├── images/logos/ (15 logo files for marquee)
 └── google1887c5edf8ff7bdb.html (Google Search Console Verifizierung)
 ```
@@ -89,6 +91,27 @@ All pages have a fixed dark banner (`#1A1A1A`) directly below the header that pl
 - `images/apple-touch-icon.png` — 180×180 PNG mit weißem Hintergrund für iOS Home-Screen
 
 All 6 HTML pages include the favicon `<link>` tags after `<meta name="viewport">`.
+
+## Email Signature
+
+Professional HTML email signature for Bernd Weiler's Outlook business account. Assets hosted on `valueate.de`, signature file lives in `PA_Bernd/email-signature/`.
+
+**Assets** (`images/email/`):
+- `logo-email-animated.gif` — 360x143px (displayed 180x71), 20-frame shimmer/glint animation, 24.5 KB. Frame 0 is the complete static logo (Outlook Desktop only shows frame 1).
+- `logo-email.png` — Static fallback logo, same dimensions
+- `icon-email.png`, `icon-phone.png`, `icon-whatsapp.png`, `icon-web.png`, `icon-location.png` — 40x40px (displayed 16x16), brand orange `#E6821F`, transparent background
+
+**Signature** (`PA_Bernd/email-signature/signature.html`):
+- Table-based layout, 400px wide, all styles inline (no `<style>` block)
+- Fonts: Arial (body), Georgia (tagline) — universally available
+- Orange accent only on top separator line + website link
+- All images reference `https://www.valueate.de/images/email/`
+- German entities (`&uuml;`, `&szlig;`, `&bdquo;`/`&ldquo;` for quotes)
+
+**Generator** (`PA_Bernd/email-signature/generate-assets.py`):
+- Requires Pillow + numpy
+- Generates all image assets from the source `logo.png`
+- Icons drawn with Pillow's `ImageDraw` (polygons, ellipses, rectangles)
 
 ## Title Tag Schema
 
@@ -259,7 +282,7 @@ These rules apply to ALL German text on the site:
 - [ ] **llms-full.txt erstellen** — Kompletter Content inline (nicht nur Links), für kleine Sites besonders sinnvoll
 - [ ] **datePublished / dateModified** in Schema + sichtbar auf Seiten — Content < 3 Monate bekommt ~doppelt so viele Citations
 - [ ] **Speakable Schema** — Identifiziert TTS-geeignete Abschnitte für Sprachassistenten (62% Voice-Suchen 2026)
-- [ ] **Google Business Profile einrichten** — Primäre Datenquelle für lokale KI-Suchen ("KI-Berater Biberach")
+- [x] **Google Business Profile einrichten** — ✅ Erledigt (19.02.2026). Knowledge Panel dauert ca. 2–4 Wochen.
 - [ ] **Quellenangaben in Texten** — "Laut McKinsey (2025)..." erhöht Zitierwahrscheinlichkeit um 30–40%
 
 ### Priorität 3 — Langfristige Sichtbarkeit
