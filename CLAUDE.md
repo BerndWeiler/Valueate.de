@@ -23,7 +23,7 @@ Valueate.de is a static marketing website for Bernd Weiler's AI consulting and i
 - `datenschutz.html` — Privacy policy (fully implemented)
 - `css/style.css` — All styles, mobile-first with BEM naming convention
 - `js/main.js` — Vanilla JS (ES6, `const`/`let`) in an IIFE: cookie banner, mobile nav, header scroll effect, Intersection Observer animations, smooth scrolling, calculator logic, contact form success/error messages
-- `images/` — Static assets (logo.png for header, logo-footer.png for footer, portraits, 4 Storyset illustrations, favicon files)
+- `images/` — Static assets (logo.png for header, logo-footer.png for footer, portraits, 4 Storyset illustrations, favicon files). **Note: Header uses images/Logo-Bernd-Valueate-02.png**
 - `images/email/` — Email signature assets (animated logo GIF, static logo PNG, 5 contact icons in brand orange)
 - `images/logos/` — 15 partner/tool logos (SVG + 1 PNG) for the logo marquee on `leistungen.html`
 - `robots.txt` — Explicit `Allow: /` for 15+ AI crawler user-agents (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, etc.) + wildcard `*`, references sitemap
@@ -208,7 +208,7 @@ Formulas:
 CSS custom properties in `:root` (style.css):
 - Primary color: `--orange: #E6821F` (light: `#FFF3E8`, dark: `#C96D14`)
 - Backgrounds alternate: white (`#FFFFFF`) and light gray (`#F5F5F5`)
-- Typography: DM Sans (body) + Playfair Display (headings) via Google Fonts
+- Typography: Plus Jakarta Sans (H1, Bold), DM Sans (H2, Bold), Inter (H3 + body) via Google Fonts
 - Breakpoints: 768px (tablet), 1024px (desktop), 1280px (large desktop)
 - Container max-width: 1200px (`--max-width`)
 
@@ -249,7 +249,7 @@ These rules apply to ALL German text on the site:
 - **Phone/WhatsApp**: +49 152 06237493
 - **LinkedIn**: linkedin.com/in/berndweiler
 - **Address**: Birkenharder Str. 10, 88400 Biberach an der Riß
-- **Fonts**: Google Fonts CDN (DM Sans, Playfair Display)
+- **Fonts**: Google Fonts CDN (Plus Jakarta Sans, DM Sans, Inter)
 - **Google Ads**: Gutschein-Aktion aktiv — 400 € Guthaben bei 400 € Ausgaben (Code: `4XPTN-XYKND-PRVN`). Eingelöst am 19.02.2026, Anforderungen erfüllen bis **20.04.2026**. Nach Erhalt des Guthabens: innerhalb von 60 Tagen aufbrauchen.
 
 ## Planned / Missing Content

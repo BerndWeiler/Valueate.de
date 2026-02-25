@@ -1,0 +1,43 @@
+# Valueate.de - Project Context & Rules
+
+## Project DNA
+Valueate.de is a static marketing website for Bernd Weiler's AI consulting business.
+- **Target Audience**: German SMEs (kleine und mittelständische Unternehmen).
+- **Core Positioning**: Pragmatic AI automation, no buzzwords, fixed prices, personal contact.
+- **Key Differentiator**: Transparent pricing, fast turnaround, direct access to the implementer.
+- **Location**: Biberach an der Riß (Baden-Württemberg). Focus on South Germany.
+
+## Technology Stack
+- **Architecture**: Zero-build static site (no framework, no bundler).
+- **HTML**: Standard HTML5, semantic structure.
+- **CSS**: Mobile-first, BEM naming convention (`.block__element--modifier`), CSS custom properties.
+- **JS**: Vanilla JS (ES6+), wrapped in IIFE, no dependencies.
+- **Hosting**: Hostinger (Git auto-deploy from `main` branch).
+
+## Language & Tone (German)
+- **Always use formal "Sie"** (never "du").
+- **Use "Ich-Form"** ("Ich helfe...") for the consultant Bernd Weiler.
+- **No buzzwords or technical jargon**.
+- **Prohibited Terms**: Do not use "Agenten" or "Agent" (too technical). Use "KI-Automatisierung" or "KI-Sprachassistent" instead.
+- **Typography**: Use Gedankenstriche (–) instead of colons before lists. Use Gedankenstriche (–) instead of periods in headlines.
+- **Style**: "und" instead of "&" in all visible text.
+
+## Visual Design System
+- **Colors**: Primary `--orange: #E6821F`, backgrounds white and light gray (`#F5F5F5`).
+- **Fonts**: Plus Jakarta Sans (H1, Bold), DM Sans (H2, Bold), Inter (H3 + body).
+- **Icons**: Lucide/Tabler/Phosphor (SVG only).
+- **Illustrations**: Storyset Amico style (orange accents).
+- **Constraint**: NO AI-generated photorealistic images. NO technology-only illustrations (show people).
+
+## Key Components & Services
+- **Primary CTA**: TidyCal calendar booking (https://tidycal.com/valueate/erstgespraech).
+- **Contact**: kontakt@valueate.de | +49 152 06237493.
+- **SEO/GEO**: High priority on Generative Engine Optimization (GEO) to be discoverable by AI models (ChatGPT, Gemini, etc.).
+
+## Guidance for Claude
+When working on this project:
+1. Refer to `CLAUDE.md` for technical details and current implementation status.
+2. Refer to `Valueate_Website_Uebergabe_v2.md` for canonical texts.
+3. Always match the BEM style and mobile-first approach.
+4. Ensure all German text follows the tone rules specified above.
+5. If creating new content, prioritize GEO-friendly structures (self-contained units, clear headings).

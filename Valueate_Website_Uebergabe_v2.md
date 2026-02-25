@@ -182,8 +182,9 @@ Scrollendes Logo-Band zwischen letztem Leistungsblock und Abschluss-CTA. Übersc
 - **Sekundärtext:** #555 bis #777
 
 ### Typografie ✅ UMGESETZT
-- **Überschriften:** Playfair Display (Google Fonts) – seriös mit Charakter
-- **Fließtext:** DM Sans (Google Fonts) – modern, gut lesbar
+- **H1-Überschriften:** Plus Jakarta Sans, Bold (Google Fonts) – geometrisch, modern, warm
+- **H2-Überschriften:** DM Sans, Bold (Google Fonts) – sauber, professionell
+- **H3 / Fließtext:** Inter, Regular/Medium (Google Fonts) – extrem gut lesbar, neutral, modern
 - Eingebunden via Google Fonts CDN
 
 ### Layout und Visuell
