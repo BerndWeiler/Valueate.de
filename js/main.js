@@ -114,6 +114,40 @@
         }
     }
 
+    // --- FAQ Accordion ---
+    var faqItems = document.querySelectorAll('.faq__item');
+
+    if (faqItems.length > 0) {
+        faqItems.forEach(function (item) {
+            var btn = item.querySelector('.faq__question');
+            if (!btn) return;
+
+            btn.addEventListener('click', function () {
+                var isActive = item.classList.contains('is-active');
+
+                // Close all other items (accordion behavior)
+                faqItems.forEach(function (other) {
+                    if (other !== item && other.classList.contains('is-active')) {
+                        other.classList.remove('is-active');
+                        other.querySelector('.faq__question').setAttribute('aria-expanded', 'false');
+                        other.querySelector('.faq__answer').style.maxHeight = null;
+                    }
+                });
+
+                // Toggle current item
+                item.classList.toggle('is-active');
+                btn.setAttribute('aria-expanded', !isActive);
+
+                var answer = item.querySelector('.faq__answer');
+                if (!isActive) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                } else {
+                    answer.style.maxHeight = null;
+                }
+            });
+        });
+    }
+
     // --- Smooth scroll for anchor links ---
     document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
         anchor.addEventListener('click', function (e) {
@@ -138,6 +172,57 @@
     if (urlParams.get('error') === '1' && errorBox) {
         errorBox.classList.add('is-visible');
         errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // --- Glossar: Suche & Alpha-Nav ---
+    var glossarSection = document.querySelector('.glossar');
+
+    if (glossarSection) {
+        var searchInput = glossarSection.querySelector('.glossar__search');
+        var cards = glossarSection.querySelectorAll('.glossar__card');
+        var groups = glossarSection.querySelectorAll('.glossar__group');
+        var emptyEl = document.getElementById('glossar-empty');
+        var alphaButtons = glossarSection.querySelectorAll('.glossar__alpha-btn');
+
+        function filterGlossar() {
+            var query = searchInput.value.trim().toLowerCase();
+            var visibleCount = 0;
+
+            cards.forEach(function (card) {
+                var text = card.textContent.toLowerCase();
+                var match = !query || text.indexOf(query) !== -1;
+                card.classList.toggle('is-hidden', !match);
+                if (match) visibleCount++;
+            });
+
+            groups.forEach(function (group) {
+                var visibleCards = group.querySelectorAll('.glossar__card:not(.is-hidden)');
+                group.classList.toggle('is-hidden', visibleCards.length === 0);
+            });
+
+            if (emptyEl) {
+                emptyEl.classList.toggle('is-visible', visibleCount === 0);
+            }
+        }
+
+        if (searchInput) {
+            searchInput.addEventListener('input', filterGlossar);
+        }
+
+        alphaButtons.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var letter = btn.getAttribute('data-letter');
+                var target = document.getElementById('glossar-' + letter);
+                if (target) {
+                    // Clear search when navigating by letter
+                    if (searchInput && searchInput.value) {
+                        searchInput.value = '';
+                        filterGlossar();
+                    }
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
     }
 
     // --- Kostenersparnis-Rechner ---
