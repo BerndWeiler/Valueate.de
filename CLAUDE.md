@@ -23,7 +23,7 @@ Valueate.de is a static marketing website for Bernd Weiler's AI consulting and i
 - `datenschutz.html` — Privacy policy (fully implemented)
 - `css/style.css` — All styles, mobile-first with BEM naming convention
 - `js/main.js` — Vanilla JS (ES6, `const`/`let`) in an IIFE: cookie banner, mobile nav, header scroll effect, Intersection Observer animations, smooth scrolling, calculator logic, contact form success/error messages
-- `images/` — Static assets (logo.png for header, logo-footer.png for footer, portraits, 4 Storyset illustrations, favicon files). **Note: Header uses images/Logo-Bernd-Valueate-02.png**
+- `images/` — Static assets (logo.png for header, logo-footer.png.svg for footer, portraits, 4 Storyset illustrations, favicon files: Logo-Bernd-Valueate-04.png/svg). **Note: Header uses images/Logo-Bernd-Valueate-04.png**
 - `images/email/` — Email signature assets (animated logo GIF, static logo PNG, 5 contact icons in brand orange)
 - `images/logos/` — 15 partner/tool logos (SVG + 1 PNG) for the logo marquee on `leistungen.html`
 - `robots.txt` — Explicit `Allow: /` for 15+ AI crawler user-agents (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, etc.) + wildcard `*`, references sitemap
@@ -55,7 +55,7 @@ public_html/
 ├── robots.txt, sitemap.xml, llms.txt
 ├── css/style.css
 ├── js/main.js
-├── images/ (all image files + favicon.svg, favicon-32x32.png, apple-touch-icon.png)
+├── images/ (all image files + Logo-Bernd-Valueate-04.png/svg for favicons)
 ├── images/email/ (logo-email-animated.gif, logo-email.png, 5 icon-*.png for email signature)
 ├── images/logos/ (15 logo files for marquee)
 └── google1887c5edf8ff7bdb.html (Google Search Console Verifizierung)
@@ -84,11 +84,10 @@ All pages have a fixed dark banner (`#1A1A1A`) directly below the header that pl
 
 ## Favicon
 
-3D-V-Checkmark aus dem Valueate-Logo (dunkler linker Arm, metallisch-graue innere Fläche, orange äußere Fläche). Die PNGs sind direkt aus `images/logo.png` extrahiert (kein manuelles SVG-Nachbauen), das SVG bettet das PNG als Base64 ein, um den Metallic-Effekt zu erhalten.
+3D-V-Checkmark aus dem neuen Valueate-Logo.
 
-- `images/favicon.svg` — SVG mit eingebettetem PNG (Base64), für moderne Browser
-- `images/favicon-32x32.png` — 32×32 PNG-Fallback für ältere Browser
-- `images/apple-touch-icon.png` — 180×180 PNG mit weißem Hintergrund für iOS Home-Screen
+- `images/Valueate-Logo/Logo-Bernd-Valueate-04.svg` — SVG für moderne Browser
+- `images/Valueate-Logo/Logo-Bernd-Valueate-04.png` — PNG für iOS Home-Screen und Fallback
 
 All 6 HTML pages include the favicon `<link>` tags after `<meta name="viewport">`.
 
