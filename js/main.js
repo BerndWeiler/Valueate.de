@@ -20,35 +20,33 @@
         storedConsent = 'essential';
     }
 
+    // Update Google Consent Mode based on stored preference
+    function updateGoogleConsent(granted) {
+        if (typeof gtag === 'function') {
+            gtag('consent', 'update', {
+                analytics_storage: granted ? 'granted' : 'denied',
+                ad_storage: granted ? 'granted' : 'denied',
+                ad_user_data: granted ? 'granted' : 'denied',
+                ad_personalization: granted ? 'granted' : 'denied'
+            });
+        }
+    }
+
+    // Apply stored consent on page load
+    if (storedConsent === 'all') {
+        updateGoogleConsent(true);
+    }
+
     if (cookieBanner && !storedConsent) {
         setTimeout(function () {
             cookieBanner.classList.add('is-visible');
         }, 1000);
     }
 
-    function loadGoogleTag() {
-        if (document.querySelector('script[src*="googletagmanager.com/gtag"]')) return;
-        var script = document.createElement('script');
-        script.async = true;
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-HSC916TMZ1';
-        document.head.appendChild(script);
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-HSC916TMZ1', { anonymize_ip: true });
-    }
-
     function hideCookieBanner(consent) {
         localStorage.setItem('cookie-consent', consent);
         cookieBanner.classList.remove('is-visible');
-        if (consent === 'all') {
-            loadGoogleTag();
-        }
-    }
-
-    // Load gtag on returning visits if user previously accepted
-    if (storedConsent === 'all') {
-        loadGoogleTag();
+        updateGoogleConsent(consent === 'all');
     }
 
     if (cookieAccept) {
