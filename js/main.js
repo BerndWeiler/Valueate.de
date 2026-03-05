@@ -10,26 +10,56 @@
     const cookieAccept = document.getElementById('cookie-accept');
     const cookieDecline = document.getElementById('cookie-decline');
 
-    if (cookieBanner && !localStorage.getItem('cookie-consent')) {
+    // Migrate legacy values from previous cookie banner
+    var storedConsent = localStorage.getItem('cookie-consent');
+    if (storedConsent === 'accepted') {
+        localStorage.setItem('cookie-consent', 'all');
+        storedConsent = 'all';
+    } else if (storedConsent === 'declined') {
+        localStorage.setItem('cookie-consent', 'essential');
+        storedConsent = 'essential';
+    }
+
+    if (cookieBanner && !storedConsent) {
         setTimeout(function () {
             cookieBanner.classList.add('is-visible');
         }, 1000);
     }
 
+    function loadGoogleTag() {
+        if (document.querySelector('script[src*="googletagmanager.com/gtag"]')) return;
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-HSC916TMZ1';
+        document.head.appendChild(script);
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-HSC916TMZ1', { anonymize_ip: true });
+    }
+
     function hideCookieBanner(consent) {
         localStorage.setItem('cookie-consent', consent);
         cookieBanner.classList.remove('is-visible');
+        if (consent === 'all') {
+            loadGoogleTag();
+        }
+    }
+
+    // Load gtag on returning visits if user previously accepted
+    if (storedConsent === 'all') {
+        loadGoogleTag();
     }
 
     if (cookieAccept) {
         cookieAccept.addEventListener('click', function () {
-            hideCookieBanner('accepted');
+            hideCookieBanner('all');
         });
     }
 
     if (cookieDecline) {
         cookieDecline.addEventListener('click', function () {
-            hideCookieBanner('declined');
+            hideCookieBanner('essential');
         });
     }
 
