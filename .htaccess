@@ -1,4 +1,4 @@
-# Block access to markdown reference docs and config files
-<FilesMatch "\.(md|gitignore)$">
+# Block access to reference docs and IDE/tool config files
+<FilesMatch "\.(md|gitignore|cursorrules|docx|xlsx|pptx)$">
     Require all denied
 </FilesMatch>

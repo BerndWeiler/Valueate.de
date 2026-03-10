@@ -2,3 +2,8 @@
 **/.DS_Store
 .claude/
 .cursor/
+.cursorrules
+PA_Bernd/
+*.docx
+*.xlsx
+*.pptx

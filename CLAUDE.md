@@ -45,11 +45,11 @@ Reference documents (deployed but blocked via `.htaccess`):
 
 **Automatic deployment** via GitHub → Hostinger (Git auto-deploy from `main` branch). All files in the repo are deployed to `public_html/`.
 
-`.htaccess` blocks HTTP access to sensitive files (`.md`, `.gitignore`) — they exist on the server but return 403 Forbidden.
+`.htaccess` blocks HTTP access to sensitive files (`.md`, `.gitignore`, `.cursorrules`, Office-Dateien) — they exist on the server but return 403 Forbidden.
 
 ```
 public_html/
-├── .htaccess (blocks .md and .gitignore access)
+├── .htaccess (blocks .md, .gitignore, .cursorrules, .docx/.xlsx/.pptx)
 ├── index.html, leistungen.html, kostenersparnis-rechner.html, kontakt.html, impressum.html, datenschutz.html
 ├── send-mail.php
 ├── robots.txt, sitemap.xml, llms.txt
@@ -61,7 +61,7 @@ public_html/
 └── google1887c5edf8ff7bdb.html (Google Search Console Verifizierung)
 ```
 
-**NOT in repo (excluded via `.gitignore`):** `.claude/`, `.cursor/`, `.DS_Store`
+**NOT in repo (excluded via `.gitignore`):** `.claude/`, `.cursor/`, `.cursorrules`, `.DS_Store`, `*.docx`, `*.xlsx`, `*.pptx`
 
 ## Development
 
