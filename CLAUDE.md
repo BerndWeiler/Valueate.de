@@ -32,7 +32,8 @@ Valueate.de is a static marketing website for Bernd Weiler's AI consulting and i
 
 Reference documents (deployed but blocked via `.htaccess`):
 - `Valueate_Website_Uebergabe_v2.md` — Canonical source for all texts, design specs, and section structure
-- `Website-Analyse_KI-Agentur.md` — Competitor analysis with recommendations
+
+**Business-Dokumente** (Businessplan, Finanzplanung, Steuer, Wettbewerb) sind in einem separaten Repo: `../Valueate-Business/`
 
 ## Git & Hosting
 
@@ -91,26 +92,14 @@ All pages have a fixed dark banner (`#1A1A1A`) directly below the header that pl
 
 All 6 HTML pages include the favicon `<link>` tags after `<meta name="viewport">`.
 
-## Email Signature
+## Email Signature Assets
 
-Professional HTML email signature for Bernd Weiler's Outlook business account. Assets hosted on `valueate.de`, signature file lives in `PA_Bernd/email-signature/`.
+Email-Signatur-Bilder werden auf der Website gehostet (`images/email/`):
+- `logo-email-animated.gif` — 360x143px (displayed 180x71), Shimmer-Animation
+- `logo-email.png` — Statischer Fallback
+- `icon-email.png`, `icon-phone.png`, `icon-whatsapp.png`, `icon-web.png`, `icon-location.png` — 40x40px (displayed 16x16), Brand Orange `#E6821F`
 
-**Assets** (`images/email/`):
-- `logo-email-animated.gif` — 360x143px (displayed 180x71), 20-frame shimmer/glint animation, 24.5 KB. Frame 0 is the complete static logo (Outlook Desktop only shows frame 1).
-- `logo-email.png` — Static fallback logo, same dimensions
-- `icon-email.png`, `icon-phone.png`, `icon-whatsapp.png`, `icon-web.png`, `icon-location.png` — 40x40px (displayed 16x16), brand orange `#E6821F`, transparent background
-
-**Signature** (`PA_Bernd/email-signature/signature.html`):
-- Table-based layout, 400px wide, all styles inline (no `<style>` block)
-- Fonts: Arial (body), Georgia (tagline) — universally available
-- Orange accent only on top separator line + website link
-- All images reference `https://www.valueate.de/images/email/`
-- German entities (`&uuml;`, `&szlig;`, `&bdquo;`/`&ldquo;` for quotes)
-
-**Generator** (`PA_Bernd/email-signature/generate-assets.py`):
-- Requires Pillow + numpy
-- Generates all image assets from the source `logo.png`
-- Icons drawn with Pillow's `ImageDraw` (polygons, ellipses, rectangles)
+Signatur-Quelldateien und Businessplan liegen im separaten Repo `../Valueate-Business/`.
 
 ## Title Tag Schema
 
